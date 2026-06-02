@@ -76,6 +76,37 @@
       margin: 0;
     }
 
+    /* Aktivitetsliste med ikoner */
+    .sheet__activities {
+      display: flex;
+      flex-direction: column;
+      gap: 3mm;
+    }
+    .sheet__activity {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      background: var(--color-offwhite);
+      border-radius: 10px;
+      padding: 3mm 5mm;
+    }
+    .sheet__activity img {
+      width: 11mm;
+      height: 11mm;
+      flex-shrink: 0;
+    }
+    .sheet__activity-label {
+      font-size: 11pt;
+      font-weight: var(--fw-semibold);
+      color: var(--color-dark-blue);
+      line-height: 1.2;
+    }
+    .sheet__activity-meta {
+      font-size: 9pt;
+      color: var(--color-green);
+      font-weight: var(--fw-bold);
+    }
+
     /* Info-rad */
     .sheet__info {
       display: flex;
@@ -135,8 +166,40 @@
 
     <div class="sheet__body">
       <p class="sheet__lead">Kort ingress som forteller hva dette handler om – hvem det er for, hva som skjer, og hvorfor man bør komme.</p>
-      <p class="sheet__text">Mer informasjon om arrangementet. Skriv gjerne to–tre setninger med praktiske detaljer om hva som vil skje og hva deltakerne kan forvente.</p>
-      <p class="sheet__text">Påmelding og mer info på <strong>fsk.no</strong> eller ta kontakt med oss direkte.</p>
+
+      <!-- Aktivitetsliste – bytt ikon og tekst etter behov -->
+      <div class="sheet__activities">
+        <div class="sheet__activity">
+          <img src="../../assets/icons/orienteringsloper.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Orientering for alle</div>
+            <div class="sheet__activity-meta">Tirsdager 18:00 · Arenaen</div>
+          </div>
+        </div>
+        <div class="sheet__activity">
+          <img src="../../assets/icons/snofnugg.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Langrenn og skiskyting</div>
+            <div class="sheet__activity-meta">Lørdager 10:00 · Skihytta</div>
+          </div>
+        </div>
+        <div class="sheet__activity">
+          <img src="../../assets/icons/ake.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Aking for barn</div>
+            <div class="sheet__activity-meta">Søndager 11:00 · Bakken ved Arenaen</div>
+          </div>
+        </div>
+        <div class="sheet__activity">
+          <img src="../../assets/icons/flerepersoner.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Felles trening</div>
+            <div class="sheet__activity-meta">Onsdager 17:30 · Arenaen</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="sheet__text">Påmelding og mer info på <strong>fsk.no</strong></p>
 
       <div class="sheet__info">
         <div class="sheet__info-item">
