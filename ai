@@ -1,0 +1,536 @@
+{
+  "schema": "https://brage.github.io/fskdesign/ai",
+  "schema_version": "1.0.0",
+  "name": "FSK Designsystem",
+  "brand": {
+    "name": "Fredrikstad Skiklubb",
+    "short_name": "FSK",
+    "language": "nb-NO",
+    "base_url": "https://brage.github.io/fskdesign",
+    "public_ai_url": "https://brage.github.io/fskdesign/ai",
+    "tone": [
+      "tydelig",
+      "aktiv",
+      "klubbnaer",
+      "inkluderende",
+      "praktisk"
+    ],
+    "description": "Visuell identitet og produksjonsregler for materiell fra Fredrikstad Skiklubb."
+  },
+  "assets": {
+    "logos": {
+      "primary": {
+        "path": "assets/logo/fsk-logo.svg",
+        "url": "https://brage.github.io/fskdesign/assets/logo/fsk-logo.svg",
+        "usage": "Standard logo paa lys, beige eller lys groenn bakgrunn."
+      },
+      "inverted": {
+        "path": "assets/logo/fsk-logo-inv.svg",
+        "url": "https://brage.github.io/fskdesign/assets/logo/fsk-logo-inv.svg",
+        "usage": "Lys logovariant for moerke bakgrunner."
+      },
+      "emblem": {
+        "path": "assets/logo/fsk-logo-emblem.svg",
+        "url": "https://brage.github.io/fskdesign/assets/logo/fsk-logo-emblem.svg",
+        "usage": "Emblem for favicon, sma flater og dekorative merkeankre."
+      },
+      "emblem_png": {
+        "path": "assets/logo/fsk-logo-emblem.png",
+        "url": "https://brage.github.io/fskdesign/assets/logo/fsk-logo-emblem.png",
+        "usage": "PNG-fallback for emblem."
+      }
+    },
+    "fonts": {
+      "dm_sans_regular_variable": {
+        "path": "assets/fonts/DMSans-VariableFont_opsz,wght.ttf",
+        "url": "https://brage.github.io/fskdesign/assets/fonts/DMSans-VariableFont_opsz,wght.ttf",
+        "font_family": "DM Sans",
+        "font_style": "normal",
+        "font_weight_range": "100 1000"
+      },
+      "dm_sans_italic_variable": {
+        "path": "assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf",
+        "url": "https://brage.github.io/fskdesign/assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf",
+        "font_family": "DM Sans",
+        "font_style": "italic",
+        "font_weight_range": "100 1000"
+      }
+    },
+    "icons": [
+      "aktivitet",
+      "ake",
+      "blomst",
+      "bok",
+      "fjell",
+      "flerepersoner",
+      "hjerte",
+      "hus",
+      "kompass",
+      "loeypemaskin",
+      "mat",
+      "orienteringsloper",
+      "peis",
+      "person",
+      "pil",
+      "snofnugg",
+      "utforsk"
+    ],
+    "icon_url_pattern": "https://brage.github.io/fskdesign/assets/icons/{icon}.svg",
+    "templates": {
+      "poster_a4": {
+        "name": "Plakat A4",
+        "path": "assets/templates/plakat-a4.html",
+        "url": "https://brage.github.io/fskdesign/assets/templates/plakat-a4.html",
+        "format": "A4 portrait",
+        "recommended_for": [
+          "arrangement",
+          "informasjon",
+          "oppslag"
+        ]
+      },
+      "flyer_a5": {
+        "name": "Flyer A5",
+        "path": "assets/templates/flyer-a5.html",
+        "url": "https://brage.github.io/fskdesign/assets/templates/flyer-a5.html",
+        "format": "A5 landscape",
+        "recommended_for": [
+          "kurs",
+          "rekruttering",
+          "kort informasjon"
+        ]
+      },
+      "social_1080": {
+        "name": "Sosiale medier 1080",
+        "path": "assets/templates/sosiale-medier-1080.html",
+        "url": "https://brage.github.io/fskdesign/assets/templates/sosiale-medier-1080.html",
+        "format": "1080x1080 px",
+        "recommended_for": [
+          "Instagram",
+          "Facebook",
+          "digital deling"
+        ]
+      }
+    }
+  },
+  "design_tokens": {
+    "css_url": "https://brage.github.io/fskdesign/css/tokens.css",
+    "colors": {
+      "dark_blue": {
+        "token": "--color-dark-blue",
+        "hex": "#091256",
+        "role": "Tekst, header og footer."
+      },
+      "light_blue": {
+        "token": "--color-light-blue",
+        "hex": "#c3cfeb",
+        "role": "Sekundaer knapp, ramme og navigasjonstilstand."
+      },
+      "bright_blue": {
+        "token": "--color-bright-blue",
+        "hex": "#004890",
+        "role": "Lenker, fokusring og input-ramme."
+      },
+      "green": {
+        "token": "--color-green",
+        "hex": "#415820",
+        "role": "Primaer CTA, badges og viktige handlingsflater."
+      },
+      "light_green": {
+        "token": "--color-light-green",
+        "hex": "#c6c075",
+        "role": "Hero, kortbakgrunn og highlights."
+      },
+      "offwhite": {
+        "token": "--color-offwhite",
+        "hex": "#fcf6f2",
+        "role": "Overflater, knapper og skjemafelt."
+      },
+      "beige": {
+        "token": "--color-beige",
+        "hex": "#f1eae5",
+        "role": "Sidebakgrunn."
+      },
+      "red": {
+        "token": "--color-red",
+        "hex": "#d8382f",
+        "role": "Advarsel, viktig informasjon og logoelement."
+      },
+      "peach": {
+        "token": "--color-peach",
+        "hex": "#f8b99d",
+        "role": "Varm aksent ved behov."
+      },
+      "black": {
+        "token": "--color-black",
+        "hex": "#000000",
+        "role": "Kun teknisk noedvendig bruk."
+      },
+      "white": {
+        "token": "--color-white",
+        "hex": "#ffffff",
+        "role": "Kun teknisk noedvendig bruk."
+      }
+    },
+    "semantic_colors": {
+      "ink": "var(--color-dark-blue)",
+      "ink_soft": "color-mix(in srgb, var(--color-dark-blue) 55%, transparent)",
+      "background": "var(--color-beige)",
+      "surface": "var(--color-offwhite)",
+      "line": "var(--color-light-blue)",
+      "primary": "var(--color-green)",
+      "secondary": "var(--color-light-blue)",
+      "accent": "var(--color-bright-blue)",
+      "danger": "var(--color-red)",
+      "success": "var(--color-green)"
+    },
+    "typography": {
+      "font_family": "DM Sans",
+      "css_font_stack": "\"DM Sans\", \"DM Sans Fallback\", ui-sans-serif, system-ui, sans-serif",
+      "mono_font_stack": "ui-monospace, \"SFMono-Regular\", Menlo, Monaco, Consolas, monospace",
+      "font_weights": {
+        "normal": 400,
+        "medium": 500,
+        "semibold": 600,
+        "bold": 700
+      },
+      "scale": {
+        "text_xs": {
+          "token": "--text-xs",
+          "value": "0.667rem",
+          "usage": "Caption og token-navn."
+        },
+        "text_sm": {
+          "token": "--text-sm",
+          "value": "0.75rem",
+          "usage": "Labels, metadata og liten knapptekst."
+        },
+        "text_base": {
+          "token": "--text-base",
+          "value": "1rem",
+          "usage": "Broedtekst."
+        },
+        "text_lg": {
+          "token": "--text-lg",
+          "value": "1.333rem",
+          "usage": "Ingress og H3."
+        },
+        "text_xl": {
+          "token": "--text-xl",
+          "value": "2.083rem",
+          "usage": "H2."
+        },
+        "text_2xl": {
+          "token": "--text-2xl",
+          "value": "3rem",
+          "usage": "H1."
+        }
+      },
+      "line_heights": {
+        "tight": {
+          "token": "--lh-tight",
+          "value": "1.25"
+        },
+        "normal": {
+          "token": "--lh-normal",
+          "value": "1.45"
+        },
+        "loose": {
+          "token": "--lh-loose",
+          "value": "1.5"
+        }
+      },
+      "letter_spacing": {
+        "tracking_tight": {
+          "token": "--tracking-tight",
+          "value": "-0.025em"
+        },
+        "tracking_wide": {
+          "token": "--tracking-wide",
+          "value": "0.025em"
+        }
+      }
+    },
+    "spacing": {
+      "space_1": {
+        "token": "--space-1",
+        "value": "0.25rem"
+      },
+      "space_2": {
+        "token": "--space-2",
+        "value": "0.5rem"
+      },
+      "space_3": {
+        "token": "--space-3",
+        "value": "0.75rem"
+      },
+      "space_4": {
+        "token": "--space-4",
+        "value": "1rem"
+      },
+      "space_5": {
+        "token": "--space-5",
+        "value": "1.25rem"
+      },
+      "space_6": {
+        "token": "--space-6",
+        "value": "1.5rem"
+      },
+      "space_7": {
+        "token": "--space-7",
+        "value": "1.75rem"
+      },
+      "space_8": {
+        "token": "--space-8",
+        "value": "2rem"
+      },
+      "space_9": {
+        "token": "--space-9",
+        "value": "2.25rem"
+      },
+      "space_11": {
+        "token": "--space-11",
+        "value": "2.75rem"
+      },
+      "space_16": {
+        "token": "--space-16",
+        "value": "4rem"
+      },
+      "space_20": {
+        "token": "--space-20",
+        "value": "5rem"
+      }
+    },
+    "radius": {
+      "xs": {
+        "token": "--radius-xs",
+        "value": "0.55rem"
+      },
+      "sm": {
+        "token": "--radius-sm",
+        "value": "10px"
+      },
+      "md": {
+        "token": "--radius-md",
+        "value": "15px"
+      },
+      "lg": {
+        "token": "--radius-lg",
+        "value": "25px"
+      },
+      "xl": {
+        "token": "--radius-xl",
+        "value": "40px"
+      },
+      "2xl": {
+        "token": "--radius-2xl",
+        "value": "50px"
+      },
+      "full": {
+        "token": "--radius-full",
+        "value": "9999px"
+      }
+    },
+    "shadows": {
+      "sm": {
+        "token": "--shadow-sm",
+        "value": "0 1px 2px rgba(9, 18, 86, 0.07)"
+      },
+      "md": {
+        "token": "--shadow-md",
+        "value": "0 4px 6px -1px rgba(9, 18, 86, 0.10), 0 2px 4px -2px rgba(9, 18, 86, 0.10)"
+      }
+    },
+    "layout": {
+      "container": {
+        "token": "--container",
+        "value": "1200px"
+      },
+      "body_background": "var(--color-beige)",
+      "body_text": "var(--color-dark-blue)",
+      "paragraph_max_width": "65ch"
+    }
+  },
+  "components": {
+    "buttons": {
+      "base_class": "btn",
+      "variants": {
+        "primary": {
+          "class": "btn",
+          "background": "var(--color-green)",
+          "foreground": "var(--color-offwhite)",
+          "usage": "Primaer handling."
+        },
+        "secondary": {
+          "class": "btn btn--secondary",
+          "background": "var(--color-light-blue)",
+          "foreground": "var(--color-dark-blue)",
+          "usage": "Sekundaer handling."
+        },
+        "outline": {
+          "class": "btn btn--outline",
+          "background": "transparent",
+          "foreground": "var(--color-dark-blue)",
+          "usage": "Lavere prioritet eller lenkehandling."
+        },
+        "light": {
+          "class": "btn btn--light",
+          "background": "var(--color-offwhite)",
+          "foreground": "var(--color-dark-blue)",
+          "usage": "Knapp paa moerk bakgrunn."
+        }
+      },
+      "shape": "pill",
+      "radius": "var(--radius-full)"
+    },
+    "cards": {
+      "classes": [
+        "card",
+        "card--green",
+        "card--link"
+      ],
+      "radius": "var(--radius-2xl)",
+      "default_background": "var(--color-offwhite)",
+      "green_background": "var(--color-light-green)",
+      "usage": "Nyheter, maler, ressurser og repeterbare innholdsblokker."
+    },
+    "badges": {
+      "classes": [
+        "badge",
+        "badge--blue",
+        "badge--red",
+        "badge--beige"
+      ],
+      "shape": "pill",
+      "usage": "Kategori, status eller kort metadata."
+    },
+    "forms": {
+      "classes": [
+        "field",
+        "select-wrap"
+      ],
+      "input_radius": "var(--radius-full)",
+      "textarea_radius": "var(--radius-lg)",
+      "border_color": "var(--color-bright-blue)"
+    },
+    "logo_stage": {
+      "classes": [
+        "logo-stage",
+        "logo-stage--white",
+        "logo-stage--beige",
+        "logo-stage--green",
+        "logo-stage--dark"
+      ],
+      "usage": "Visning av logo paa ulike bakgrunner."
+    },
+    "templates": {
+      "classes": [
+        "template-grid",
+        "template-card",
+        "template-card__preview",
+        "template-card__body"
+      ],
+      "usage": "Oversikt over trykksakmaler."
+    },
+    "agent_guides": {
+      "classes": [
+        "agent-rule-grid",
+        "agent-rule",
+        "prompt-box",
+        "token-list",
+        "workflow-strip",
+        "checklist"
+      ],
+      "usage": "AI-agentdokumentasjon og arbeidsflyt."
+    }
+  },
+  "brand_rules": {
+    "do": [
+      "Bruk offisielle SVG-logoer fra assets/logo.",
+      "Bruk DM Sans for all tekst.",
+      "Bruk FSK-paletten og CSS-tokens fra css/tokens.css.",
+      "Behold logoens proporsjoner.",
+      "La logoen ha tydelig frisone.",
+      "Skriv kort og konkret for plakater og sosiale medier.",
+      "Bruk groenn som primaer handlingsfarge.",
+      "Bruk moerk blaa som hovedfarge for tekst."
+    ],
+    "dont": [
+      "Ikke lag ny logo.",
+      "Ikke strekk eller forvreng logoen.",
+      "Ikke endre logoens farger.",
+      "Ikke bruk gammel logo i nytt materiell.",
+      "Ikke introduser nye hovedfarger.",
+      "Ikke bruk dekorative effekter som ikke finnes i designsystemet.",
+      "Ikke fyll plakater med lange tekstblokker.",
+      "Ikke publiser uten manuell sjekk av dato, sted og kontaktinfo."
+    ],
+    "logo_clearspace": "Hold fri sone rundt logoen. Ingen tekst, bilder eller grafikk tett inntil logoen.",
+    "image_guidance": "Bruk relevante bilder fra aktivitet, klubb, vinter, trening eller fellesskap. Bildet skal stoette informasjonen og ikke gjore teksten mindre lesbar.",
+    "icon_guidance": "Bruk 1 til 3 FSK-ikoner per flate som kategorianker. Ikoner erstatter aldri logoen."
+  },
+  "content_patterns": {
+    "poster": {
+      "required_fields": [
+        "title",
+        "date",
+        "time",
+        "place",
+        "target_group",
+        "call_to_action"
+      ],
+      "recommended_hierarchy": [
+        "logo",
+        "title",
+        "date_time",
+        "place",
+        "short_details",
+        "call_to_action"
+      ],
+      "copy_guidance": "Hold tittelen kort. Bruk punktliste for praktisk info. Gjenta ikke samme informasjon flere steder."
+    },
+    "flyer": {
+      "required_fields": [
+        "title",
+        "short_intro",
+        "details",
+        "call_to_action"
+      ],
+      "copy_guidance": "Bruk mer forklarende tekst enn plakat, men hold hvert avsnitt kort."
+    },
+    "social": {
+      "required_fields": [
+        "title",
+        "date_or_key_message",
+        "call_to_action"
+      ],
+      "copy_guidance": "Bruk faa ord, stor tekst og tydelig kontrast. Flytt detaljer til posttekst ved behov."
+    }
+  },
+  "agent_instructions": {
+    "system_prompt": "Du er en designagent for Fredrikstad Skiklubb. Foelg FSK designsystem strengt. Bruk offisielle logoer, DM Sans, FSK-farger og eksisterende maler. Ikke finn opp nye merkeelementer. Prioriter tydelig informasjon, lesbarhet og korrekt innhold.",
+    "generation_prompt_template": "Lag en {format} for Fredrikstad Skiklubb basert paa FSK designsystem. Bruk DM Sans, FSK-paletten, offisiell logo og relevante tokens. Innhold: tittel={title}, dato={date}, tid={time}, sted={place}, maalgruppe={target_group}, praktisk_info={details}, handling={call_to_action}. Lever som {output_type}.",
+    "preferred_output": [
+      "HTML/CSS som bruker FSK tokens",
+      "kort layoutbeskrivelse",
+      "kontrolliste over merkevareregler som er fulgt"
+    ],
+    "quality_check": [
+      "Logoen er offisiell og ikke endret.",
+      "Alle farger finnes i design_tokens.colors.",
+      "DM Sans brukes for all tekst.",
+      "Dato, tid, sted og handling er tydelige.",
+      "Tekst passer formatet uten overlapp.",
+      "Kontrast er god.",
+      "Output kan aapnes i nettleser og eksporteres til PDF eller bilde."
+    ]
+  },
+  "human_pages": {
+    "home": "https://brage.github.io/fskdesign/",
+    "logo": "https://brage.github.io/fskdesign/pages/logo.html",
+    "colors_typography": "https://brage.github.io/fskdesign/pages/farger-typografi.html",
+    "components": "https://brage.github.io/fskdesign/pages/komponenter.html",
+    "print_templates": "https://brage.github.io/fskdesign/pages/trykksaker.html",
+    "ai_agents": "https://brage.github.io/fskdesign/pages/ai-agenter.html",
+    "working_with_ai": "https://brage.github.io/fskdesign/pages/arbeid-med-ai.html"
+  }
+}
