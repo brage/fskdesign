@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komponenter – FSK Designsystem</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html"><span>FSK Designsystem</span></a>
+      <nav class="site-nav" aria-label="Hovedmeny">
+        <a href="logo.html">Logo</a>
+        <a href="farger-typografi.html">Farger &amp; typografi</a>
+        <a href="komponenter.html" aria-current="page">Komponenter</a>
+        <a href="trykksaker.html">Trykksaker</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section stack">
+    <h1>Komponenter</h1>
+    <p class="lead">Gjenbrukbare byggeklosser. Kopier markup-en og bruk klassene fra
+       <code>css/components.css</code>.</p>
+
+    <section class="section">
+      <h2>Knapper</h2>
+      <p style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
+        <a class="btn" href="#">Primær</a>
+        <a class="btn btn--secondary" href="#">Sekundær</a>
+        <a class="btn btn--ghost" href="#">Ghost</a>
+        <a class="btn btn--lg" href="#">Stor</a>
+        <a class="btn btn--sm" href="#">Liten</a>
+      </p>
+      <pre><code>&lt;a class="btn"&gt;Primær&lt;/a&gt;
+&lt;a class="btn btn--secondary"&gt;Sekundær&lt;/a&gt;
+&lt;a class="btn btn--ghost"&gt;Ghost&lt;/a&gt;</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Kort</h2>
+      <div class="grid grid-3">
+        <div class="card"><h3>Korttittel</h3><p class="muted">Litt beskrivende tekst i et kort.</p></div>
+        <a class="card card--link" href="#"><h3>Klikkbart kort</h3><p class="muted">Hele kortet er en lenke.</p></a>
+      </div>
+      <pre><code>&lt;div class="card"&gt;&lt;h3&gt;Tittel&lt;/h3&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;</code></pre>
+    </section>
+
+    <section class="section">
+      <h2>Badges</h2>
+      <p style="display:flex;gap:var(--space-3);flex-wrap:wrap">
+        <span class="badge">Standard</span>
+        <span class="badge badge--success">Suksess</span>
+        <span class="badge badge--warning">Advarsel</span>
+        <span class="badge badge--danger">Feil</span>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Skjema</h2>
+      <div class="card" style="max-width:480px">
+        <div class="field"><label for="navn">Navn</label><input id="navn" type="text" placeholder="Ola Nordmann"></div>
+        <div class="field"><label for="gren">Gren</label>
+          <select id="gren"><option>Langrenn</option><option>Hopp</option><option>Kombinert</option></select>
+        </div>
+        <div class="field"><label for="melding">Melding</label><textarea id="melding" rows="3"></textarea></div>
+        <button class="btn" type="button">Send</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>Fredrikstad Skiklubb · Designsystem</p></div>
+  </footer>
+</body>
+</html>

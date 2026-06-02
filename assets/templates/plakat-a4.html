@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>FSK Plakat A4</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <style>
+    @page { size: A4 portrait; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-sans); background: #555; }
+    /* Skjermforhåndsvisning – A4 i 96dpi ≈ 794×1123px */
+    .sheet {
+      width: 210mm; min-height: 297mm;
+      margin: 16px auto; background: var(--color-white);
+      display: flex; flex-direction: column;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+    }
+    .sheet__top { background: var(--color-primary); color: #fff; padding: 24mm 18mm 16mm; }
+    .sheet__logo { font-weight: 700; font-size: 14pt; letter-spacing: .04em; opacity: .9; }
+    .sheet__title { font-size: 40pt; line-height: 1.05; font-weight: 700; margin: 8mm 0 0; }
+    .sheet__body { padding: 14mm 18mm; flex: 1; }
+    .sheet__lead { font-size: 16pt; color: var(--color-ink-soft); }
+    .sheet__meta { margin-top: auto; }
+    .sheet__bottom { background: var(--color-accent); color: var(--color-ink); padding: 10mm 18mm; font-weight: 700; font-size: 14pt; }
+    @media print { body { background: #fff; } .sheet { margin: 0; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="sheet__top">
+      <!-- TODO: bytt til ekte FSK-logo fra /assets/logo -->
+      <div class="sheet__logo">FREDRIKSTAD SKIKLUBB</div>
+      <div class="sheet__title">Tittel på<br>arrangementet</div>
+    </div>
+    <div class="sheet__body">
+      <p class="sheet__lead">Kort ingress som forteller hva dette handler om – dato, sted og
+         hvorfor man bør komme.</p>
+      <p>Mer informasjon, påmelding og praktiske detaljer her.</p>
+    </div>
+    <div class="sheet__bottom">Dato · Sted · fsk.no</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farger &amp; typografi – FSK Designsystem</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html"><span>FSK Designsystem</span></a>
+      <nav class="site-nav" aria-label="Hovedmeny">
+        <a href="logo.html">Logo</a>
+        <a href="farger-typografi.html" aria-current="page">Farger &amp; typografi</a>
+        <a href="komponenter.html">Komponenter</a>
+        <a href="trykksaker.html">Trykksaker</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section stack">
+    <h1>Farger &amp; typografi</h1>
+    <p class="lead">Klikk på et fargekort for å kopiere hex-verdien.
+       <span class="todo">TODO</span> bytt verdiene til fsk.no-fargene i <code>css/tokens.css</code>.</p>
+
+    <section class="section">
+      <h2>Merkefarger</h2>
+      <div class="swatches">
+        <button class="swatch" data-hex="#0a3d62">
+          <span class="swatch__color" style="background:var(--color-primary)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Primær</span><span class="swatch__hex">#0a3d62</span></span>
+        </button>
+        <button class="swatch" data-hex="#062a44">
+          <span class="swatch__color" style="background:var(--color-primary-dark)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Primær mørk</span><span class="swatch__hex">#062a44</span></span>
+        </button>
+        <button class="swatch" data-hex="#c0392b">
+          <span class="swatch__color" style="background:var(--color-secondary)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Sekundær</span><span class="swatch__hex">#c0392b</span></span>
+        </button>
+        <button class="swatch" data-hex="#f1c40f">
+          <span class="swatch__color" style="background:var(--color-accent)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Aksent</span><span class="swatch__hex">#f1c40f</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Nøytraler</h2>
+      <div class="swatches">
+        <button class="swatch" data-hex="#14181d">
+          <span class="swatch__color" style="background:var(--color-ink)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Tekst</span><span class="swatch__hex">#14181d</span></span>
+        </button>
+        <button class="swatch" data-hex="#4a525b">
+          <span class="swatch__color" style="background:var(--color-ink-soft)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Tekst sekundær</span><span class="swatch__hex">#4a525b</span></span>
+        </button>
+        <button class="swatch" data-hex="#e2e6ea">
+          <span class="swatch__color" style="background:var(--color-line)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Kantlinje</span><span class="swatch__hex">#e2e6ea</span></span>
+        </button>
+        <button class="swatch" data-hex="#f6f8fa">
+          <span class="swatch__color" style="background:var(--color-bg);border-bottom:1px solid var(--color-line)"></span>
+          <span class="swatch__meta"><span class="swatch__name">Bakgrunn</span><span class="swatch__hex">#f6f8fa</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Typografi</h2>
+      <p class="muted">Skrifttype: <code>var(--font-sans)</code>.
+         <span class="todo">TODO</span> sett fsk.no-fonten via <code>@font-face</code> i tokens.css.</p>
+      <div class="card">
+        <div class="type-row"><span class="label">H1 / 49px</span><span style="font-size:var(--fs-800);font-weight:var(--fw-bold)">Fredrikstad Skiklubb</span></div>
+        <div class="type-row"><span class="label">H2 / 39px</span><span style="font-size:var(--fs-700);font-weight:var(--fw-bold)">Overskrift nivå 2</span></div>
+        <div class="type-row"><span class="label">H3 / 31px</span><span style="font-size:var(--fs-600);font-weight:var(--fw-bold)">Overskrift nivå 3</span></div>
+        <div class="type-row"><span class="label">Lead / 20px</span><span style="font-size:var(--fs-400)">Ingress som introduserer innholdet.</span></div>
+        <div class="type-row"><span class="label">Brødtekst / 16px</span><span style="font-size:var(--fs-300)">Vanlig brødtekst for løpende innhold.</span></div>
+        <div class="type-row"><span class="label">Caption / 13px</span><span style="font-size:var(--fs-100)">Bildetekst og småtekst.</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>Fredrikstad Skiklubb · Designsystem</p></div>
+  </footer>
+  <script src="../js/copy.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* ==========================================================================
+   FSK Designsystem – Komponenter
+   Gjenbrukbare UI-komponenter. Bruk disse klassene i trykksaker og websider.
+   ========================================================================== */
+
+/* --- Knapper ------------------------------------------------------------- */
+.btn {
+  --btn-bg: var(--color-primary);
+  --btn-fg: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font: inherit;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  padding: 0.75em 1.25em;
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  text-decoration: none;
+  cursor: pointer;
+  transition: filter 0.15s ease, background 0.15s ease;
+}
+.btn:hover { filter: brightness(1.08); }
+.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+
+.btn--secondary { --btn-bg: var(--color-secondary); }
+.btn--ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-primary);
+  border-color: var(--color-primary);
+}
+.btn--ghost:hover { background: var(--color-primary); --btn-fg: var(--color-white); }
+.btn--lg { font-size: var(--fs-400); }
+.btn--sm { font-size: var(--fs-200); padding: 0.5em 0.9em; }
+
+/* --- Kort ---------------------------------------------------------------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+}
+.card h3 { margin-bottom: var(--space-2); }
+.card--link { text-decoration: none; color: inherit; display: block; transition: box-shadow 0.15s, transform 0.15s; }
+.card--link:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+
+/* --- Badge --------------------------------------------------------------- */
+.badge {
+  display: inline-block;
+  font-size: var(--fs-100);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.25em 0.7em;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.badge--success { background: var(--color-success); }
+.badge--warning { background: var(--color-warning); }
+.badge--danger  { background: var(--color-danger); }
+
+/* --- Skjema -------------------------------------------------------------- */
+.field { margin-bottom: var(--space-4); }
+.field label { display: block; font-weight: var(--fw-medium); margin-bottom: var(--space-2); }
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.6em 0.8em;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
+}
+
+/* --- Fargekort (farger & typografi) -------------------------------------- */
+.swatches { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.swatch {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  padding: 0;
+}
+.swatch__color { height: 96px; }
+.swatch__meta { padding: var(--space-3); }
+.swatch__name { font-weight: var(--fw-bold); display: block; }
+.swatch__hex { font-family: var(--font-mono); font-size: var(--fs-200); color: var(--color-ink-soft); }
+.swatch.copied .swatch__hex::after { content: " ✓ kopiert"; color: var(--color-success); }
+
+/* --- Typeprøve ----------------------------------------------------------- */
+.type-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+  padding-block: var(--space-3);
+  border-bottom: 1px solid var(--color-line);
+}
+.type-row .label { flex: 0 0 7rem; color: var(--color-ink-soft); font-size: var(--fs-200); font-family: var(--font-mono); }
+
+/* --- Do / Don't ---------------------------------------------------------- */
+.dodont { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.dodont__item { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-line); background: var(--color-surface); }
+.dodont__head { padding: var(--space-3) var(--space-4); font-weight: var(--fw-bold); color: var(--color-white); }
+.dodont__body { padding: var(--space-4); }
+.dodont--do    .dodont__head { background: var(--color-success); }
+.dodont--dont  .dodont__head { background: var(--color-danger); }

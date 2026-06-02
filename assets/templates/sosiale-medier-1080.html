@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>FSK Sosiale medier 1080×1080</title>
+  <link rel="stylesheet" href="../../css/tokens.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-sans); background: #555; display: grid; place-items: center; min-height: 100vh; }
+    /* 1080×1080 skalert til skjerm; bruk skjermbilde eller print-til-PDF for eksport */
+    .post {
+      width: 1080px; height: 1080px;
+      transform: scale(0.5); transform-origin: center;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+      color: #fff; display: flex; flex-direction: column; justify-content: space-between;
+      padding: 80px;
+    }
+    .post__logo { font-weight: 700; font-size: 32px; letter-spacing: .04em; opacity: .9; }
+    .post__title { font-size: 96px; line-height: 1.04; font-weight: 700; }
+    .post__meta { font-size: 36px; font-weight: 600; }
+    .post__bar { height: 16px; width: 160px; background: var(--color-accent); border-radius: 999px; margin-bottom: 24px; }
+    @media print { @page { size: 1080px 1080px; margin: 0; } body { background: #fff; } .post { transform: none; } }
+  </style>
+</head>
+<body>
+  <div class="post">
+    <!-- TODO: bytt til ekte FSK-logo fra /assets/logo -->
+    <div class="post__logo">FREDRIKSTAD SKIKLUBB</div>
+    <div>
+      <div class="post__bar"></div>
+      <div class="post__title">Din<br>budskap her</div>
+    </div>
+    <div class="post__meta">Dato · Sted · @fsk</div>
+  </div>
+</body>
+</html>

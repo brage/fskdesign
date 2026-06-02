@@ -1,0 +1,92 @@
+/* ==========================================================================
+   FSK Designsystem – Design tokens
+   --------------------------------------------------------------------------
+   Alt av farger, typografi og avstander defineres her som CSS-variabler.
+   Bytt ut PLASSHOLDER-verdiene under med de faktiske verdiene fra fsk.no /
+   PPT-malen når de foreligger. Søk etter «TODO» for å finne alt som skal inn.
+   ========================================================================== */
+
+/* --- Webfonter ----------------------------------------------------------- */
+/* TODO: Legg fontfiler i /assets/fonts og avkommenter blokkene under.
+   Bytt ut font-family-navn slik at de matcher fontene fra fsk.no.
+
+@font-face {
+  font-family: "FSK Sans";
+  src: url("../assets/fonts/fsk-sans.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "FSK Sans";
+  src: url("../assets/fonts/fsk-sans-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+*/
+
+:root {
+  /* --- Farger: merke (TODO: erstatt med fsk.no-verdier) ----------------- */
+  --color-primary:        #0a3d62; /* TODO: FSK primærfarge */
+  --color-primary-dark:   #062a44; /* TODO */
+  --color-primary-light:  #2e6da4; /* TODO */
+  --color-secondary:      #c0392b; /* TODO: FSK sekundærfarge */
+  --color-accent:         #f1c40f; /* TODO: aksent */
+
+  /* --- Farger: nøytraler ----------------------------------------------- */
+  --color-ink:      #14181d;  /* tekst */
+  --color-ink-soft: #4a525b;  /* sekundær tekst */
+  --color-line:     #e2e6ea;  /* kantlinjer */
+  --color-surface:  #ffffff;  /* kort/flater */
+  --color-bg:       #f6f8fa;  /* sidebakgrunn */
+  --color-white:    #ffffff;
+
+  /* --- Farger: semantiske ---------------------------------------------- */
+  --color-success: #2e7d32;
+  --color-warning: #ed6c02;
+  --color-danger:  #c62828;
+  --color-info:    #0277bd;
+
+  /* --- Typografi ------------------------------------------------------- */
+  /* TODO: bytt til fsk.no-fontene. Faller tilbake på systemfonter. */
+  --font-sans: "FSK Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-head: var(--font-sans);
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+
+  /* Typeskala (1.250 – major third) */
+  --fs-100: 0.8rem;    /* 12.8px – caption */
+  --fs-200: 0.9rem;    /* 14.4px – small */
+  --fs-300: 1rem;      /* 16px   – brødtekst */
+  --fs-400: 1.25rem;   /* 20px   – h5/lead */
+  --fs-500: 1.563rem;  /* 25px   – h4 */
+  --fs-600: 1.953rem;  /* 31px   – h3 */
+  --fs-700: 2.441rem;  /* 39px   – h2 */
+  --fs-800: 3.052rem;  /* 49px   – h1 */
+
+  --lh-tight:   1.15;
+  --lh-normal:  1.5;
+  --fw-regular: 400;
+  --fw-medium:  600;
+  --fw-bold:    700;
+
+  /* --- Avstand (8px-skala) --------------------------------------------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  /* --- Form & flate ---------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(20, 24, 29, 0.08);
+  --shadow-md: 0 4px 12px rgba(20, 24, 29, 0.10);
+  --shadow-lg: 0 12px 32px rgba(20, 24, 29, 0.14);
+
+  --container: 1080px;
+}

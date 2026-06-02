@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maler for trykksaker – FSK Designsystem</title>
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html"><span>FSK Designsystem</span></a>
+      <nav class="site-nav" aria-label="Hovedmeny">
+        <a href="logo.html">Logo</a>
+        <a href="farger-typografi.html">Farger &amp; typografi</a>
+        <a href="komponenter.html">Komponenter</a>
+        <a href="trykksaker.html" aria-current="page">Trykksaker</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section stack">
+    <h1>Maler for trykksaker</h1>
+    <p class="lead">Ferdige maler som bruker FSK-fargene og typografien. Åpne en mal, tilpass
+       teksten, og skriv ut til PDF (<kbd>Ctrl/Cmd&nbsp;+&nbsp;P</kbd>) for trykk eller deling.</p>
+
+    <div class="grid grid-3">
+      <a class="card card--link" href="../assets/templates/plakat-a4.html">
+        <h3>Plakat A4</h3>
+        <p class="muted">Stående plakat til oppslag og arrangementer.</p>
+      </a>
+      <a class="card card--link" href="../assets/templates/flyer-a5.html">
+        <h3>Flyer A5</h3>
+        <p class="muted">Liten flyer for utdeling.</p>
+      </a>
+      <a class="card card--link" href="../assets/templates/sosiale-medier-1080.html">
+        <h3>Sosiale medier 1080×1080</h3>
+        <p class="muted">Kvadratisk post til Instagram/Facebook.</p>
+      </a>
+    </div>
+
+    <section class="section">
+      <h2>Slik bruker du malene</h2>
+      <ol class="stack">
+        <li>Åpne ønsket mal i nettleseren.</li>
+        <li>Rediger teksten direkte i HTML-fila, eller skriv inn i feltene der det er mulig.</li>
+        <li>Skriv ut til PDF. Malene har riktig sideformat via <code>@page</code>-regler.</li>
+        <li>For sosiale medier: ta skjermbilde av 1080×1080-flaten eller skriv ut til PDF og eksporter som bilde.</li>
+      </ol>
+      <p class="muted"><span class="todo">TODO</span> Legg inn ekte logo og grafiske elementer
+         fra Drive i <code>/assets/</code> – malene plukker dem opp automatisk.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>Fredrikstad Skiklubb · Designsystem</p></div>
+  </footer>
+</body>
+</html>

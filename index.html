@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FSK Designsystem – Fredrikstad Skiklubb</title>
+  <meta name="description" content="Designsystem for Fredrikstad Skiklubb: logo, farger, typografi, komponenter og maler for trykksaker.">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <!-- TODO: bytt til ekte logo i /assets/logo -->
+        <span>FSK Designsystem</span>
+      </a>
+      <nav class="site-nav" aria-label="Hovedmeny">
+        <a href="pages/logo.html">Logo</a>
+        <a href="pages/farger-typografi.html">Farger &amp; typografi</a>
+        <a href="pages/komponenter.html">Komponenter</a>
+        <a href="pages/trykksaker.html">Trykksaker</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Fredrikstad Skiklubb – Designsystem</h1>
+      <p>Felles retningslinjer og byggeklosser for trykksaker, websider og annet materiell.
+         Sørger for at alt FSK lager ser helhetlig og gjenkjennelig ut.</p>
+    </div>
+  </section>
+
+  <main class="container section">
+    <div class="grid grid-2">
+      <a class="card card--link" href="pages/logo.html">
+        <h3>Logo &amp; bruksregler</h3>
+        <p class="muted">Logovarianter, frisone og riktig/feil bruk.</p>
+      </a>
+      <a class="card card--link" href="pages/farger-typografi.html">
+        <h3>Farger &amp; typografi</h3>
+        <p class="muted">Fargepalett med hex/tokens og typeskala.</p>
+      </a>
+      <a class="card card--link" href="pages/komponenter.html">
+        <h3>Komponenter</h3>
+        <p class="muted">Knapper, kort, skjema og badges som gjenbrukbar kode.</p>
+      </a>
+      <a class="card card--link" href="pages/trykksaker.html">
+        <h3>Maler for trykksaker</h3>
+        <p class="muted">Plakat, flyer og sosiale medier – klare for utskrift.</p>
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>Kom i gang</h2>
+      <p>Designsystemet er bygget med rene design tokens (CSS-variabler) i
+         <code>css/tokens.css</code>. Endrer du en farge eller font der, oppdateres
+         hele systemet – inkludert trykksak-malene.</p>
+      <p class="muted"><span class="todo">TODO</span> Logo, fonter, grafiske elementer og
+         endelige farger legges inn av FSK – se <code>README.md</code>.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Fredrikstad Skiklubb · Designsystem · Publisert med GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
