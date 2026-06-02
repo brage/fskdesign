@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Maler for trykksaker – FSK Designsystem</title>
+  <title>Trykksaker – FSK Designsystem</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="../index.html"><span>FSK Designsystem</span></a>
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo/fsk-logo.svg" alt="FSK logo">
+        <span class="brand-name">
+          <span>Fredrikstad</span>
+          <span>Skiklubb</span>
+        </span>
+      </a>
       <nav class="site-nav" aria-label="Hovedmeny">
         <a href="logo.html">Logo</a>
         <a href="farger-typografi.html">Farger &amp; typografi</a>
@@ -21,41 +28,138 @@
     </div>
   </header>
 
-  <main class="container section stack">
-    <h1>Maler for trykksaker</h1>
-    <p class="lead">Ferdige maler som bruker FSK-fargene og typografien. Åpne en mal, tilpass
-       teksten, og skriv ut til PDF (<kbd>Ctrl/Cmd&nbsp;+&nbsp;P</kbd>) for trykk eller deling.</p>
+  <main class="container">
 
-    <div class="grid grid-3">
-      <a class="card card--link" href="../assets/templates/plakat-a4.html">
-        <h3>Plakat A4</h3>
-        <p class="muted">Stående plakat til oppslag og arrangementer.</p>
-      </a>
-      <a class="card card--link" href="../assets/templates/flyer-a5.html">
-        <h3>Flyer A5</h3>
-        <p class="muted">Liten flyer for utdeling.</p>
-      </a>
-      <a class="card card--link" href="../assets/templates/sosiale-medier-1080.html">
-        <h3>Sosiale medier 1080×1080</h3>
-        <p class="muted">Kvadratisk post til Instagram/Facebook.</p>
-      </a>
+    <div class="page-hero">
+      <h1>Maler for trykksaker</h1>
+      <p class="lead">Tre klare maler for de vanligste formatene. Alle bruker FSKs design tokens – oppdatering av <code>tokens.css</code> påvirker alle maler automatisk.</p>
     </div>
 
     <section class="section">
-      <h2>Slik bruker du malene</h2>
-      <ol class="stack">
-        <li>Åpne ønsket mal i nettleseren.</li>
-        <li>Rediger teksten direkte i HTML-fila, eller skriv inn i feltene der det er mulig.</li>
-        <li>Skriv ut til PDF. Malene har riktig sideformat via <code>@page</code>-regler.</li>
-        <li>For sosiale medier: ta skjermbilde av 1080×1080-flaten eller skriv ut til PDF og eksporter som bilde.</li>
-      </ol>
-      <p class="muted"><span class="todo">TODO</span> Legg inn ekte logo og grafiske elementer
-         fra Drive i <code>/assets/</code> – malene plukker dem opp automatisk.</p>
+      <h2>Tilgjengelige maler</h2>
+
+      <div class="template-grid">
+
+        <div class="template-card">
+          <div class="template-card__preview" style="background:var(--color-dark-blue);">
+            <div style="text-align:center; color:var(--color-offwhite);">
+              <img src="../assets/logo/fsk-logo-inv.svg" alt="" style="width:60px; margin:0 auto var(--space-4);">
+              <div style="font-size:11px; font-weight:700; letter-spacing:0.05em;">A4 PLAKAT</div>
+              <div style="font-size:8px; opacity:0.6; margin-top:4px;">210 × 297 mm</div>
+            </div>
+          </div>
+          <div class="template-card__body">
+            <h3>Plakat A4</h3>
+            <p>Vertikal A4-plakat for arrangement og informasjon. Egnet for trykk og digital visning.</p>
+            <div class="btn-group">
+              <a href="../assets/templates/plakat-a4.html" class="btn btn--sm" target="_blank">Åpne mal</a>
+              <a href="../assets/templates/plakat-a4.html" class="btn btn--sm btn--outline" download>Last ned HTML</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="template-card__preview" style="background:var(--color-light-green);">
+            <div style="text-align:center; color:var(--color-dark-blue);">
+              <img src="../assets/logo/fsk-logo.svg" alt="" style="width:60px; margin:0 auto var(--space-4);">
+              <div style="font-size:11px; font-weight:700; letter-spacing:0.05em;">A5 FLYER</div>
+              <div style="font-size:8px; opacity:0.6; margin-top:4px;">148 × 210 mm</div>
+            </div>
+          </div>
+          <div class="template-card__body">
+            <h3>Flyer A5</h3>
+            <p>Horisontal A5-flyer for kurs, arrangement eller rekruttering. Passer også som dobbeltsidig visittkort-format.</p>
+            <div class="btn-group">
+              <a href="../assets/templates/flyer-a5.html" class="btn btn--sm" target="_blank">Åpne mal</a>
+              <a href="../assets/templates/flyer-a5.html" class="btn btn--sm btn--outline" download>Last ned HTML</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="template-card">
+          <div class="template-card__preview" style="background:var(--color-green);">
+            <div style="text-align:center; color:var(--color-offwhite);">
+              <img src="../assets/logo/fsk-logo-inv.svg" alt="" style="width:55px; margin:0 auto var(--space-4);">
+              <div style="font-size:11px; font-weight:700; letter-spacing:0.05em;">1080 × 1080 px</div>
+              <div style="font-size:8px; opacity:0.6; margin-top:4px;">Sosiale medier</div>
+            </div>
+          </div>
+          <div class="template-card__body">
+            <h3>Sosiale medier</h3>
+            <p>Kvadratisk 1080×1080 px for Instagram og Facebook. Klar for skjermbilde og direkte deling.</p>
+            <div class="btn-group">
+              <a href="../assets/templates/sosiale-medier-1080.html" class="btn btn--sm" target="_blank">Åpne mal</a>
+              <a href="../assets/templates/sosiale-medier-1080.html" class="btn btn--sm btn--outline" download>Last ned HTML</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Slik bruker du malene</h2>
+
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card__body">
+            <h3>1. Åpne HTML-filen</h3>
+            <p>Dobbeltklikk på HTML-filen eller åpne den i en nettleser. Malen åpner seg i riktig format med FSK-styling.</p>
+          </div>
+        </div>
+        <div class="card card--green">
+          <div class="card__body">
+            <h3>2. Rediger innhold</h3>
+            <p>Åpne filen i en teksteditor og bytt ut plassholdertekst og bilde-URLer med faktisk innhold.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>3. Skriv ut / eksporter</h3>
+            <p>For trykksaker: bruk nettleserens utskriftsdialog med "Lagre som PDF". Skru av topptekst/bunntekst i utskriftsinnstillinger.</p>
+          </div>
+        </div>
+        <div class="card card--green">
+          <div class="card__body">
+            <h3>4. Tokens oppdateres automatisk</h3>
+            <p>Alle maler bruker <code>tokens.css</code>. Endrer du en farge eller font der, oppdateres alle malene umiddelbart.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>Fredrikstad Skiklubb · Designsystem</p></div>
+    <div class="container">
+      <div class="site-footer-inner">
+        <div>
+          <h3>Designsystem</h3>
+          <nav>
+            <a href="logo.html">Logo</a>
+            <a href="farger-typografi.html">Farger &amp; typografi</a>
+            <a href="komponenter.html">Komponenter</a>
+            <a href="trykksaker.html">Trykksaker</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Maler</h3>
+          <nav>
+            <a href="../assets/templates/plakat-a4.html" target="_blank">Plakat A4</a>
+            <a href="../assets/templates/flyer-a5.html" target="_blank">Flyer A5</a>
+            <a href="../assets/templates/sosiale-medier-1080.html" target="_blank">Sosiale medier 1080px</a>
+          </nav>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <img src="../assets/logo/fsk-logo.svg" alt="FSK logo">
+        <div>
+          <strong style="color:var(--color-offwhite);">Fredrikstad Skiklubb</strong><br>
+          <span>Designsystem</span>
+        </div>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>

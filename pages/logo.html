@@ -3,15 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo &amp; bruksregler – FSK Designsystem</title>
+  <title>Logo – FSK Designsystem</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="../index.html"><span>FSK Designsystem</span></a>
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo/fsk-logo.svg" alt="FSK logo">
+        <span class="brand-name">
+          <span>Fredrikstad</span>
+          <span>Skiklubb</span>
+        </span>
+      </a>
       <nav class="site-nav" aria-label="Hovedmeny">
         <a href="logo.html" aria-current="page">Logo</a>
         <a href="farger-typografi.html">Farger &amp; typografi</a>
@@ -21,67 +28,156 @@
     </div>
   </header>
 
-  <main class="container section stack">
-    <h1>Logo &amp; bruksregler</h1>
-    <p class="lead">FSK-logoen er det viktigste kjennetegnet vårt. Bruk den riktig og konsekvent.</p>
+  <main class="container">
 
+    <div class="page-hero">
+      <h1>Logo &amp; bruksregler</h1>
+      <p class="lead">FSK-logoen er klubbens viktigste visuelle identitet. Bruk alltid de offisielle logofilene og følg retningslinjene for frisone og fargebruk.</p>
+    </div>
+
+    <!-- Logovarianter -->
     <section class="section">
       <h2>Logovarianter</h2>
-      <p class="muted"><span class="todo">TODO</span> Legg logofilene i
-         <code>/assets/logo/</code> (helst SVG) og bytt ut plassholderne under.</p>
-      <div class="grid grid-3">
-        <div class="card" style="background: var(--color-white);">
-          <div style="display:grid;place-items:center;height:120px;border:1px dashed var(--color-line);border-radius:var(--radius-md);">Primærlogo</div>
-          <p class="muted" style="margin-top:var(--space-3)">På lys bakgrunn</p>
+      <p>To offisielle varianter: <strong>mørk versjon</strong> for lyse bakgrunner, og <strong>lys versjon</strong> for mørke bakgrunner.</p>
+
+      <div class="grid grid-2" style="margin-top: var(--space-8);">
+        <div>
+          <p style="font-size:var(--text-sm); font-weight:var(--fw-bold); margin-bottom:var(--space-3);">Mørk – på hvit/lys bakgrunn</p>
+          <div class="logo-stage logo-stage--white">
+            <img src="../assets/logo/fsk-logo.svg" alt="FSK logo – mørk versjon">
+          </div>
+          <p class="text-sm muted" style="margin-top:var(--space-3);">Bruk på hvit, beige og lys grønn bakgrunn.</p>
         </div>
-        <div class="card" style="background: var(--color-primary);">
-          <div style="display:grid;place-items:center;height:120px;border:1px dashed rgba(255,255,255,.4);border-radius:var(--radius-md);color:#fff;">Negativ logo</div>
-          <p style="margin-top:var(--space-3);color:rgba(255,255,255,.85)">På mørk bakgrunn</p>
+        <div>
+          <p style="font-size:var(--text-sm); font-weight:var(--fw-bold); margin-bottom:var(--space-3);">Lys – på mørk bakgrunn</p>
+          <div class="logo-stage logo-stage--dark">
+            <img src="../assets/logo/fsk-logo.svg" alt="FSK logo – lys versjon" style="filter:brightness(0) invert(1);">
+          </div>
+          <p class="text-sm muted" style="margin-top:var(--space-3);">Bruk på mørk blå bakgrunn og mørke fotografier.</p>
         </div>
-        <div class="card">
-          <div style="display:grid;place-items:center;height:120px;border:1px dashed var(--color-line);border-radius:var(--radius-md);">Symbol/ikon</div>
-          <p class="muted" style="margin-top:var(--space-3)">Til favicon, profilbilder</p>
+        <div>
+          <p style="font-size:var(--text-sm); font-weight:var(--fw-bold); margin-bottom:var(--space-3);">På lys grønn bakgrunn</p>
+          <div class="logo-stage logo-stage--green">
+            <img src="../assets/logo/fsk-logo.svg" alt="FSK logo – på lysgrønn">
+          </div>
+          <p class="text-sm muted" style="margin-top:var(--space-3);">Mørk versjon på <code>--color-light-green</code>.</p>
+        </div>
+        <div>
+          <p style="font-size:var(--text-sm); font-weight:var(--fw-bold); margin-bottom:var(--space-3);">På beige bakgrunn</p>
+          <div class="logo-stage logo-stage--beige">
+            <img src="../assets/logo/fsk-logo.svg" alt="FSK logo – på beige">
+          </div>
+          <p class="text-sm muted" style="margin-top:var(--space-3);">Standard sidebakgrunn – alltid mørk logo.</p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Frisone &amp; minstestørrelse</h2>
-      <p>Hold alltid en frisone rundt logoen tilsvarende høyden på logo-symbolet, slik at
-         den får puste. Ikke plasser tekst eller andre elementer innenfor denne sonen.</p>
-      <div class="card">
-        <div style="position:relative;display:grid;place-items:center;height:160px;background:var(--color-bg);border-radius:var(--radius-md);">
-          <div style="outline:2px dashed var(--color-accent);outline-offset:24px;padding:var(--space-4 );">Logo</div>
+    <!-- Historisk logo -->
+    <section class="section" style="border-top: 1px solid var(--color-line);">
+      <h2>Historisk logo</h2>
+      <p>Den gamle logoen er erstattet av ny versjon (2026). Bruk <strong>ikke</strong> den gamle i nye materialer.</p>
+      <div class="grid grid-2" style="margin-top: var(--space-8); max-width: 600px;">
+        <div>
+          <p style="font-size:var(--text-sm); font-weight:var(--fw-bold); margin-bottom:var(--space-3);">Gammel logo – farger</p>
+          <div class="logo-stage logo-stage--white">
+            <img src="../assets/logo/fsk-logo-gammel.svg" alt="Gammel FSK logo">
+          </div>
         </div>
-        <p class="muted" style="margin-top:var(--space-3)">Minstestørrelse: <span class="todo">TODO mm/px</span></p>
+        <div>
+          <p style="font-size:var(--text-sm); font-weight:var(--fw-bold); margin-bottom:var(--space-3);">Gammel logo – svart/hvit</p>
+          <div class="logo-stage logo-stage--white">
+            <img src="../assets/logo/fsk-logo-gammel-bw.svg" alt="Gammel FSK logo svart/hvit">
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
+    <!-- Frisone -->
+    <section class="section" style="border-top: 1px solid var(--color-line);">
+      <h2>Frisone</h2>
+      <p>Logoen skal alltid ha en fri sone på alle sider. Ingen tekst, bilder eller grafiske elementer innenfor denne sonen.</p>
+      <div style="margin-top:var(--space-8); background:var(--color-offwhite); border-radius:var(--radius-2xl); padding:var(--space-11); display:flex; align-items:center; justify-content:center;">
+        <div style="position:relative; padding:3rem; border:2px dashed var(--color-light-blue);">
+          <span style="position:absolute; top:4px; left:8px; font-size:var(--text-xs); font-family:var(--font-mono); color:var(--color-bright-blue);">frisone</span>
+          <img src="../assets/logo/fsk-logo.svg" alt="FSK logo med frisone" style="max-width:220px;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Do / Don't -->
+    <section class="section" style="border-top: 1px solid var(--color-line);">
       <h2>Riktig og feil bruk</h2>
       <div class="dodont">
         <div class="dodont__item dodont--do">
-          <div class="dodont__head">Gjør dette</div>
-          <div class="dodont__body stack">
-            <p>Bruk godkjente logofiler i full oppløsning.</p>
-            <p>Behold proporsjoner og frisone.</p>
-            <p>Bruk negativ logo på mørk bakgrunn.</p>
+          <div class="dodont__head">✓ Gjør dette</div>
+          <div class="dodont__body">
+            <ul style="margin:0; padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Bruk offisielle SVG-filer</li>
+              <li>Velg riktig variant basert på bakgrunnsfargen</li>
+              <li>Behold alltid proporsjoner ved skalering</li>
+              <li>Ha alltid frisone rundt logoen</li>
+            </ul>
           </div>
         </div>
         <div class="dodont__item dodont--dont">
-          <div class="dodont__head">Unngå dette</div>
-          <div class="dodont__body stack">
-            <p>Ikke strekk, roter eller forvreng logoen.</p>
-            <p>Ikke bytt farger eller legg til skygge/effekter.</p>
-            <p>Ikke plasser logoen på urolig bakgrunn med dårlig kontrast.</p>
+          <div class="dodont__head">✗ Unngå dette</div>
+          <div class="dodont__body">
+            <ul style="margin:0; padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Strekk eller forvreng ikke logoen</li>
+              <li>Bruk ikke gammel logo i nye materialer</li>
+              <li>Plasser ikke tekst/grafikk i frisonen</li>
+              <li>Endre ikke logo-farger</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- Nedlasting -->
+    <section class="section" style="border-top: 1px solid var(--color-line);">
+      <h2>Last ned logofilene</h2>
+      <div class="grid grid-2" style="max-width:600px;">
+        <div class="card">
+          <div class="card__body">
+            <h3>fsk-logo.svg</h3>
+            <p class="text-sm">Mørk versjon, SVG. For lyse bakgrunner.</p>
+            <a href="../assets/logo/fsk-logo.svg" download class="btn btn--sm">Last ned</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>fsk-logo-inv.svg</h3>
+            <p class="text-sm">Lys versjon, SVG. For mørke bakgrunner.</p>
+            <a href="../assets/logo/fsk-logo-inv.svg" download class="btn btn--sm">Last ned</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>Fredrikstad Skiklubb · Designsystem</p></div>
+    <div class="container">
+      <div class="site-footer-inner">
+        <div>
+          <h3>Designsystem</h3>
+          <nav>
+            <a href="logo.html">Logo</a>
+            <a href="farger-typografi.html">Farger &amp; typografi</a>
+            <a href="komponenter.html">Komponenter</a>
+            <a href="trykksaker.html">Trykksaker</a>
+          </nav>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <img src="../assets/logo/fsk-logo.svg" alt="FSK logo">
+        <div>
+          <strong style="color:var(--color-offwhite);">Fredrikstad Skiklubb</strong><br>
+          <span>Designsystem</span>
+        </div>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>

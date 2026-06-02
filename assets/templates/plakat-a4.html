@@ -7,37 +7,158 @@
   <style>
     @page { size: A4 portrait; margin: 0; }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: var(--font-sans); background: #555; }
-    /* Skjermforhåndsvisning – A4 i 96dpi ≈ 794×1123px */
+    body { margin: 0; font-family: var(--font-sans); background: #888; }
+
     .sheet {
       width: 210mm; min-height: 297mm;
-      margin: 16px auto; background: var(--color-white);
+      margin: 16px auto;
+      background: var(--color-beige);
       display: flex; flex-direction: column;
-      box-shadow: 0 8px 24px rgba(0,0,0,.35);
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
     }
-    .sheet__top { background: var(--color-primary); color: #fff; padding: 24mm 18mm 16mm; }
-    .sheet__logo { font-weight: 700; font-size: 14pt; letter-spacing: .04em; opacity: .9; }
-    .sheet__title { font-size: 40pt; line-height: 1.05; font-weight: 700; margin: 8mm 0 0; }
-    .sheet__body { padding: 14mm 18mm; flex: 1; }
-    .sheet__lead { font-size: 16pt; color: var(--color-ink-soft); }
-    .sheet__meta { margin-top: auto; }
-    .sheet__bottom { background: var(--color-accent); color: var(--color-ink); padding: 10mm 18mm; font-weight: 700; font-size: 14pt; }
-    @media print { body { background: #fff; } .sheet { margin: 0; box-shadow: none; } }
+
+    /* Toppseksjon – mørk blå */
+    .sheet__top {
+      background: var(--color-dark-blue);
+      color: var(--color-offwhite);
+      padding: 14mm 16mm 12mm;
+      display: flex;
+      align-items: center;
+      gap: 6mm;
+    }
+    .sheet__top img { height: 16mm; width: auto; filter: brightness(0) invert(1); }
+    .sheet__brand {
+      font-weight: var(--fw-bold);
+      font-size: 11pt;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+    }
+
+    /* Tittelblokk – lys grønn */
+    .sheet__hero {
+      background: var(--color-light-green);
+      padding: 16mm 16mm 14mm;
+    }
+    .sheet__title {
+      font-size: 38pt;
+      line-height: 1.08;
+      font-weight: var(--fw-bold);
+      letter-spacing: -0.02em;
+      color: var(--color-dark-blue);
+      margin: 0;
+    }
+    .sheet__subtitle {
+      font-size: 15pt;
+      font-weight: var(--fw-semibold);
+      color: var(--color-dark-blue);
+      margin: 4mm 0 0;
+      opacity: 0.75;
+    }
+
+    /* Innhold */
+    .sheet__body {
+      padding: 12mm 16mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8mm;
+    }
+    .sheet__lead {
+      font-size: 14pt;
+      line-height: 1.45;
+      color: var(--color-dark-blue);
+      margin: 0;
+    }
+    .sheet__text {
+      font-size: 11pt;
+      line-height: 1.55;
+      color: var(--color-dark-blue);
+      margin: 0;
+    }
+
+    /* Info-rad */
+    .sheet__info {
+      display: flex;
+      gap: 6mm;
+      margin-top: auto;
+    }
+    .sheet__info-item {
+      background: var(--color-offwhite);
+      border-radius: 10px;
+      padding: 4mm 6mm;
+      flex: 1;
+    }
+    .sheet__info-label {
+      font-size: 8pt;
+      font-weight: var(--fw-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-green);
+      margin-bottom: 1mm;
+    }
+    .sheet__info-value {
+      font-size: 11pt;
+      font-weight: var(--fw-semibold);
+      color: var(--color-dark-blue);
+    }
+
+    /* Bunnseksjon */
+    .sheet__bottom {
+      background: var(--color-green);
+      color: var(--color-offwhite);
+      padding: 6mm 16mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: var(--fw-bold);
+      font-size: 11pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .sheet { margin: 0; box-shadow: none; width: 100%; }
+    }
   </style>
 </head>
 <body>
   <div class="sheet">
+
     <div class="sheet__top">
-      <!-- TODO: bytt til ekte FSK-logo fra /assets/logo -->
-      <div class="sheet__logo">FREDRIKSTAD SKIKLUBB</div>
-      <div class="sheet__title">Tittel på<br>arrangementet</div>
+      <img src="../../assets/logo/fsk-logo.svg" alt="FSK logo">
+      <div class="sheet__brand">Fredrikstad<br>Skiklubb</div>
     </div>
+
+    <div class="sheet__hero">
+      <h1 class="sheet__title">Tittel på<br>arrangementet</h1>
+      <p class="sheet__subtitle">Undertittel eller kategori</p>
+    </div>
+
     <div class="sheet__body">
-      <p class="sheet__lead">Kort ingress som forteller hva dette handler om – dato, sted og
-         hvorfor man bør komme.</p>
-      <p>Mer informasjon, påmelding og praktiske detaljer her.</p>
+      <p class="sheet__lead">Kort ingress som forteller hva dette handler om – hvem det er for, hva som skjer, og hvorfor man bør komme.</p>
+      <p class="sheet__text">Mer informasjon om arrangementet. Skriv gjerne to–tre setninger med praktiske detaljer om hva som vil skje og hva deltakerne kan forvente.</p>
+      <p class="sheet__text">Påmelding og mer info på <strong>fsk.no</strong> eller ta kontakt med oss direkte.</p>
+
+      <div class="sheet__info">
+        <div class="sheet__info-item">
+          <div class="sheet__info-label">Dato</div>
+          <div class="sheet__info-value">dd. mmmm åååå</div>
+        </div>
+        <div class="sheet__info-item">
+          <div class="sheet__info-label">Tid</div>
+          <div class="sheet__info-value">00:00 – 00:00</div>
+        </div>
+        <div class="sheet__info-item">
+          <div class="sheet__info-label">Sted</div>
+          <div class="sheet__info-value">Stadionnavn</div>
+        </div>
+      </div>
     </div>
-    <div class="sheet__bottom">Dato · Sted · fsk.no</div>
+
+    <div class="sheet__bottom">
+      <span>fsk.no</span>
+      <span>@fredrikstadskiklubb</span>
+    </div>
+
   </div>
 </body>
 </html>

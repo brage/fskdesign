@@ -10,11 +10,15 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html">
-        <!-- TODO: bytt til ekte logo i /assets/logo -->
-        <span>FSK Designsystem</span>
+        <img src="assets/logo/fsk-logo.svg" alt="FSK logo">
+        <span class="brand-name">
+          <span>Fredrikstad</span>
+          <span>Skiklubb</span>
+        </span>
       </a>
       <nav class="site-nav" aria-label="Hovedmeny">
         <a href="pages/logo.html">Logo</a>
@@ -25,48 +29,119 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Fredrikstad Skiklubb – Designsystem</h1>
-      <p>Felles retningslinjer og byggeklosser for trykksaker, websider og annet materiell.
-         Sørger for at alt FSK lager ser helhetlig og gjenkjennelig ut.</p>
-    </div>
-  </section>
+  <main>
 
-  <main class="container section">
-    <div class="grid grid-2">
-      <a class="card card--link" href="pages/logo.html">
-        <h3>Logo &amp; bruksregler</h3>
-        <p class="muted">Logovarianter, frisone og riktig/feil bruk.</p>
-      </a>
-      <a class="card card--link" href="pages/farger-typografi.html">
-        <h3>Farger &amp; typografi</h3>
-        <p class="muted">Fargepalett med hex/tokens og typeskala.</p>
-      </a>
-      <a class="card card--link" href="pages/komponenter.html">
-        <h3>Komponenter</h3>
-        <p class="muted">Knapper, kort, skjema og badges som gjenbrukbar kode.</p>
-      </a>
-      <a class="card card--link" href="pages/trykksaker.html">
-        <h3>Maler for trykksaker</h3>
-        <p class="muted">Plakat, flyer og sosiale medier – klare for utskrift.</p>
-      </a>
+    <div class="hero">
+      <h1>Fredrikstad Skiklubb<br>Designsystem</h1>
+      <p>Felles retningslinjer og byggeklosser for trykksaker, nettsider og digitalt materiell. Sikrer at alt FSK lager ser helhetlig og gjenkjennelig ut.</p>
+      <div class="btn-group" style="margin-top: var(--space-8);">
+        <a href="pages/farger-typografi.html" class="btn">Farger &amp; typografi</a>
+        <a href="pages/komponenter.html" class="btn btn--outline">Se komponenter</a>
+      </div>
     </div>
 
-    <div class="section">
-      <h2>Kom i gang</h2>
-      <p>Designsystemet er bygget med rene design tokens (CSS-variabler) i
-         <code>css/tokens.css</code>. Endrer du en farge eller font der, oppdateres
-         hele systemet – inkludert trykksak-malene.</p>
-      <p class="muted"><span class="todo">TODO</span> Logo, fonter, grafiske elementer og
-         endelige farger legges inn av FSK – se <code>README.md</code>.</p>
+    <div class="container section">
+      <div class="grid grid-2">
+
+        <a class="card card--link" href="pages/logo.html">
+          <div class="card__img-placeholder">
+            <img src="assets/logo/fsk-logo.svg" alt="">
+          </div>
+          <div class="card__body">
+            <h3>Logo &amp; bruksregler</h3>
+            <p>Logovarianter, frisone og riktig/feil bruk.</p>
+            <span class="btn btn--sm btn--secondary" style="margin-top:auto; width:fit-content;">Se logo →</span>
+          </div>
+        </a>
+
+        <a class="card card--link card--green" href="pages/farger-typografi.html">
+          <div style="padding: var(--space-8) var(--space-6) var(--space-5); display:flex; gap:var(--space-3); flex-wrap:wrap;">
+            <span style="display:inline-block; width:2.5rem; height:2.5rem; border-radius:var(--radius-sm); background:var(--color-dark-blue);"></span>
+            <span style="display:inline-block; width:2.5rem; height:2.5rem; border-radius:var(--radius-sm); background:var(--color-green);"></span>
+            <span style="display:inline-block; width:2.5rem; height:2.5rem; border-radius:var(--radius-sm); background:var(--color-light-blue);"></span>
+            <span style="display:inline-block; width:2.5rem; height:2.5rem; border-radius:var(--radius-sm); background:var(--color-bright-blue);"></span>
+            <span style="display:inline-block; width:2.5rem; height:2.5rem; border-radius:var(--radius-sm); background:var(--color-red);"></span>
+            <span style="display:inline-block; width:2.5rem; height:2.5rem; border-radius:var(--radius-sm); background:var(--color-offwhite);"></span>
+          </div>
+          <div class="card__body">
+            <h3>Farger &amp; typografi</h3>
+            <p>Fargepalett med hex/tokens og typeskala med DM Sans.</p>
+            <span class="btn btn--sm btn--outline" style="margin-top:auto; width:fit-content;">Se farger →</span>
+          </div>
+        </a>
+
+        <a class="card card--link" href="pages/komponenter.html">
+          <div style="padding: var(--space-8) var(--space-6) var(--space-5); display:flex; gap:var(--space-3); align-items:center; flex-wrap:wrap;">
+            <span class="btn btn--sm">Primær</span>
+            <span class="btn btn--sm btn--secondary">Sekundær</span>
+            <span class="btn btn--sm btn--outline">Outline</span>
+          </div>
+          <div class="card__body">
+            <h3>Komponenter</h3>
+            <p>Knapper, kort, skjema, badges og ikoner.</p>
+            <span class="btn btn--sm btn--secondary" style="margin-top:auto; width:fit-content;">Se komponenter →</span>
+          </div>
+        </a>
+
+        <a class="card card--link card--green" href="pages/trykksaker.html">
+          <div style="padding: var(--space-8) var(--space-6) var(--space-5); display:flex; gap:var(--space-3);">
+            <div style="background:var(--color-dark-blue); border-radius:var(--radius-sm); width:3.5rem; height:5rem;"></div>
+            <div style="background:var(--color-dark-blue); border-radius:var(--radius-sm); width:4rem; height:5.5rem; opacity:0.7;"></div>
+            <div style="background:var(--color-dark-blue); border-radius:var(--radius-sm); width:5rem; height:5rem; opacity:0.5;"></div>
+          </div>
+          <div class="card__body">
+            <h3>Maler for trykksaker</h3>
+            <p>Plakat A4, flyer A5 og sosiale medier 1080×1080 px.</p>
+            <span class="btn btn--sm btn--outline" style="margin-top:auto; width:fit-content;">Se maler →</span>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="section">
+        <h2>Kom i gang</h2>
+        <p>Designsystemet er bygget med rene CSS-variabler (design tokens) i
+           <code>css/tokens.css</code>. Alle farger, fonter og spacing-verdier er hentet
+           direkte fra fsk.no og bekreftet mot presentasjonsmalen. Endrer du en verdi
+           i tokens.css, oppdateres hele systemet – inkludert trykksak-malene.</p>
+        <p>Fonten <strong>DM Sans</strong> (variabel TTF) lastes fra <code>assets/fonts/</code>,
+           logoer fra <code>assets/logo/</code>, og ikoner fra <code>assets/icons/</code>.</p>
+      </div>
     </div>
+
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Fredrikstad Skiklubb · Designsystem · Publisert med GitHub Pages.</p>
+      <div class="site-footer-inner">
+        <div>
+          <h3>Designsystem</h3>
+          <nav>
+            <a href="pages/logo.html">Logo &amp; bruksregler</a>
+            <a href="pages/farger-typografi.html">Farger &amp; typografi</a>
+            <a href="pages/komponenter.html">Komponenter</a>
+            <a href="pages/trykksaker.html">Trykksaker</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Ressurser</h3>
+          <nav>
+            <a href="assets/templates/plakat-a4.html">Plakat A4</a>
+            <a href="assets/templates/flyer-a5.html">Flyer A5</a>
+            <a href="assets/templates/sosiale-medier-1080.html">Sosiale medier</a>
+          </nav>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <img src="assets/logo/fsk-logo.svg" alt="FSK logo">
+        <div>
+          <strong style="color:var(--color-offwhite);">Fredrikstad Skiklubb</strong><br>
+          <span>Designsystem · Publisert med GitHub Pages</span>
+        </div>
+      </div>
     </div>
   </footer>
+
+
 </body>
 </html>

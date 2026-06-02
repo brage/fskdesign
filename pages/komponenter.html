@@ -9,9 +9,16 @@
   <link rel="stylesheet" href="../css/components.css">
 </head>
 <body>
+
   <header class="site-header">
     <div class="container">
-      <a class="brand" href="../index.html"><span>FSK Designsystem</span></a>
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo/fsk-logo.svg" alt="FSK logo">
+        <span class="brand-name">
+          <span>Fredrikstad</span>
+          <span>Skiklubb</span>
+        </span>
+      </a>
       <nav class="site-nav" aria-label="Hovedmeny">
         <a href="logo.html">Logo</a>
         <a href="farger-typografi.html">Farger &amp; typografi</a>
@@ -21,59 +28,274 @@
     </div>
   </header>
 
-  <main class="container section stack">
-    <h1>Komponenter</h1>
-    <p class="lead">Gjenbrukbare byggeklosser. Kopier markup-en og bruk klassene fra
-       <code>css/components.css</code>.</p>
+  <main class="container">
 
+    <div class="page-hero">
+      <h1>Komponenter</h1>
+      <p class="lead">Gjenbrukbare UI-byggeklosser. Alle komponenter er implementert med FSKs design tokens og speiler mønstrene fra fsk.no.</p>
+    </div>
+
+    <!-- Knapper -->
     <section class="section">
       <h2>Knapper</h2>
-      <p style="display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center">
-        <a class="btn" href="#">Primær</a>
-        <a class="btn btn--secondary" href="#">Sekundær</a>
-        <a class="btn btn--ghost" href="#">Ghost</a>
-        <a class="btn btn--lg" href="#">Stor</a>
-        <a class="btn btn--sm" href="#">Liten</a>
-      </p>
-      <pre><code>&lt;a class="btn"&gt;Primær&lt;/a&gt;
-&lt;a class="btn btn--secondary"&gt;Sekundær&lt;/a&gt;
-&lt;a class="btn btn--ghost"&gt;Ghost&lt;/a&gt;</code></pre>
-    </section>
+      <p>Alle knapper bruker <code>border-radius: 9999px</code> (pill-form). Primær CTA er grønn, sekundær er lysblå.</p>
 
-    <section class="section">
-      <h2>Kort</h2>
-      <div class="grid grid-3">
-        <div class="card"><h3>Korttittel</h3><p class="muted">Litt beskrivende tekst i et kort.</p></div>
-        <a class="card card--link" href="#"><h3>Klikkbart kort</h3><p class="muted">Hele kortet er en lenke.</p></a>
-      </div>
-      <pre><code>&lt;div class="card"&gt;&lt;h3&gt;Tittel&lt;/h3&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;</code></pre>
-    </section>
-
-    <section class="section">
-      <h2>Badges</h2>
-      <p style="display:flex;gap:var(--space-3);flex-wrap:wrap">
-        <span class="badge">Standard</span>
-        <span class="badge badge--success">Suksess</span>
-        <span class="badge badge--warning">Advarsel</span>
-        <span class="badge badge--danger">Feil</span>
-      </p>
-    </section>
-
-    <section class="section">
-      <h2>Skjema</h2>
-      <div class="card" style="max-width:480px">
-        <div class="field"><label for="navn">Navn</label><input id="navn" type="text" placeholder="Ola Nordmann"></div>
-        <div class="field"><label for="gren">Gren</label>
-          <select id="gren"><option>Langrenn</option><option>Hopp</option><option>Kombinert</option></select>
+      <h3>Varianter</h3>
+      <div style="background:var(--color-offwhite); border-radius:var(--radius-2xl); padding:var(--space-8); margin-top:var(--space-5);">
+        <div class="btn-group">
+          <a href="#" class="btn">Primær (grønn)</a>
+          <a href="#" class="btn btn--secondary">Sekundær (blå)</a>
+          <a href="#" class="btn btn--outline">Outline</a>
         </div>
-        <div class="field"><label for="melding">Melding</label><textarea id="melding" rows="3"></textarea></div>
-        <button class="btn" type="button">Send</button>
+        <div class="btn-group" style="margin-top:var(--space-5); background:var(--color-dark-blue); padding:var(--space-5); border-radius:var(--radius-lg);">
+          <a href="#" class="btn btn--light">Lys (på mørk)</a>
+          <a href="#" class="btn btn--secondary">Sekundær</a>
+        </div>
       </div>
+
+      <h3 style="margin-top:var(--space-8);">Størrelser</h3>
+      <div style="background:var(--color-offwhite); border-radius:var(--radius-2xl); padding:var(--space-8); margin-top:var(--space-5);">
+        <div class="btn-group" style="align-items:center;">
+          <a href="#" class="btn btn--lg">Stor</a>
+          <a href="#" class="btn">Standard</a>
+          <a href="#" class="btn btn--sm">Liten</a>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-8);">Kode</h3>
+      <pre><code>&lt;!-- Primær --&gt;
+&lt;a href="#" class="btn"&gt;Meld deg inn i klubben&lt;/a&gt;
+
+&lt;!-- Sekundær --&gt;
+&lt;a href="#" class="btn btn--secondary"&gt;Se alle nyheter&lt;/a&gt;
+
+&lt;!-- Outline --&gt;
+&lt;a href="#" class="btn btn--outline"&gt;Bli kjent med FSK&lt;/a&gt;
+
+&lt;!-- Liten --&gt;
+&lt;a href="#" class="btn btn--sm btn--secondary"&gt;Søk&lt;/a&gt;</code></pre>
     </section>
+
+    <!-- Kort -->
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Kort</h2>
+      <p>Nyhetskort-stil med avrundede hjørner (<code>border-radius: 50px</code>). Bakgrunn er off-white eller lys grønn.</p>
+
+      <div class="grid grid-2" style="margin-top:var(--space-5);">
+        <div class="card">
+          <div class="card__img-placeholder">
+            <img src="../assets/icons/fjell.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div style="margin-bottom:var(--space-3);">
+              <span class="badge badge--blue">Arrangement</span>
+            </div>
+            <h3>Sesongåpning på Ski-arena</h3>
+            <p>Bli med på årets første renn! Åpent for alle aldersgrupper og nivåer.</p>
+            <a href="#" class="btn btn--sm" style="margin-top:auto; width:fit-content;">Les mer →</a>
+          </div>
+        </div>
+        <div class="card card--green">
+          <div class="card__img-placeholder" style="background:var(--color-beige);">
+            <img src="../assets/icons/snofnugg.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div style="margin-bottom:var(--space-3);">
+              <span class="badge">Nyhet</span>
+            </div>
+            <h3>Nye løyper åpner i Arenaen</h3>
+            <p>FSK har preparert tre nye løyper for den kommende sesongen.</p>
+            <a href="#" class="btn btn--sm btn--outline" style="margin-top:auto; width:fit-content;">Les mer →</a>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:var(--space-8);">Kode</h3>
+      <pre><code>&lt;div class="card"&gt;
+  &lt;img class="card__img" src="bilde.jpg" alt=""&gt;
+  &lt;div class="card__body"&gt;
+    &lt;span class="badge"&gt;Nyhet&lt;/span&gt;
+    &lt;h3&gt;Tittel&lt;/h3&gt;
+    &lt;p&gt;Beskrivelse&lt;/p&gt;
+    &lt;a href="#" class="btn btn--sm"&gt;Les mer&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Grønn variant --&gt;
+&lt;div class="card card--green"&gt; … &lt;/div&gt;</code></pre>
+    </section>
+
+    <!-- Badges -->
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Badges &amp; tags</h2>
+      <p>Pill-form tags. Grønn er primær (artikler/nyheter), blå er sekundær (arrangementer).</p>
+
+      <div style="background:var(--color-offwhite); border-radius:var(--radius-2xl); padding:var(--space-8); margin-top:var(--space-5); display:flex; flex-wrap:wrap; gap:var(--space-4);">
+        <span class="badge">Artikkel</span>
+        <span class="badge">Nyhet</span>
+        <span class="badge badge--blue">Arrangement</span>
+        <span class="badge badge--blue">Kurs</span>
+        <span class="badge badge--red">Viktig</span>
+        <span class="badge badge--beige">Historikk</span>
+      </div>
+
+      <h3 style="margin-top:var(--space-8);">Kode</h3>
+      <pre><code>&lt;span class="badge"&gt;Artikkel&lt;/span&gt;
+&lt;span class="badge badge--blue"&gt;Arrangement&lt;/span&gt;
+&lt;span class="badge badge--red"&gt;Viktig&lt;/span&gt;</code></pre>
+    </section>
+
+    <!-- Skjema -->
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Skjemafelt</h2>
+      <p>Inndata-felt med <code>border-radius: 9999px</code> (pill). Ramme er aksent blå, hover-tilstand bytter til lys blå.</p>
+
+      <div style="background:var(--color-offwhite); border-radius:var(--radius-2xl); padding:var(--space-8); margin-top:var(--space-5); max-width:500px;">
+        <form onsubmit="return false;">
+          <div class="field">
+            <label for="demo-name">Fullt navn</label>
+            <input type="text" id="demo-name" placeholder="Ola Nordmann">
+          </div>
+          <div class="field">
+            <label for="demo-email">E-postadresse</label>
+            <input type="email" id="demo-email" placeholder="ola@example.no">
+          </div>
+          <div class="field">
+            <label for="demo-type">Aktivitetstype</label>
+            <div class="select-wrap" style="width:100%;">
+              <select id="demo-type" style="width:100%;">
+                <option>Langrenn</option>
+                <option>Alpint</option>
+                <option>Skiskyting</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="demo-msg">Melding (valgfritt)</label>
+            <textarea id="demo-msg" placeholder="Skriv her…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--secondary">Send inn påmelding</button>
+        </form>
+      </div>
+
+      <h3 style="margin-top:var(--space-8);">Kode</h3>
+      <pre><code>&lt;div class="field"&gt;
+  &lt;label for="navn"&gt;Fullt navn&lt;/label&gt;
+  &lt;input type="text" id="navn" placeholder="Ola Nordmann"&gt;
+&lt;/div&gt;
+
+&lt;!-- Select med styling --&gt;
+&lt;div class="field"&gt;
+  &lt;label for="type"&gt;Aktivitetstype&lt;/label&gt;
+  &lt;div class="select-wrap"&gt;
+    &lt;select id="type"&gt; … &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </section>
+
+    <!-- Ikoner -->
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Ikoner</h2>
+      <p>17 egendefinerte sirkulære ikoner fra FSK-prototypen. Hvert ikon er et SVG-bilde med FSKs merkevarefarger.</p>
+
+      <div class="icon-grid" style="margin-top:var(--space-5);">
+        <div class="icon-item">
+          <img src="../assets/icons/kompass.svg" alt="Kompass">
+          <span>kompass.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/snofnugg.svg" alt="Snøfnugg">
+          <span>snofnugg.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/fjell.svg" alt="Fjell">
+          <span>fjell.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/pil.svg" alt="Pil">
+          <span>pil.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/hjerte.svg" alt="Hjerte">
+          <span>hjerte.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/utforsk.svg" alt="Utforsk">
+          <span>utforsk.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/person.svg" alt="Person">
+          <span>person.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-2.svg" alt="Ikon">
+          <span>ikon-2.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-3.svg" alt="Ikon">
+          <span>ikon-3.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-4.svg" alt="Ikon">
+          <span>ikon-4.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-5.svg" alt="Ikon">
+          <span>ikon-5.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-6.svg" alt="Ikon">
+          <span>ikon-6.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-7.svg" alt="Ikon">
+          <span>ikon-7.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-8.svg" alt="Ikon">
+          <span>ikon-8.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-9.svg" alt="Ikon">
+          <span>ikon-9.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-10.svg" alt="Ikon">
+          <span>ikon-10.svg</span>
+        </div>
+        <div class="icon-item">
+          <img src="../assets/icons/ikon-11.svg" alt="Ikon">
+          <span>ikon-11.svg</span>
+        </div>
+      </div>
+
+      <p style="margin-top:var(--space-5);" class="text-sm muted">Ikonene finnes i <code>assets/icons/</code>. De 7 navngitte ikonene er identifisert fra SVG-innholdet. Gi gjerne de 10 resterende bedre navn etter bruksområde.</p>
+    </section>
+
   </main>
 
   <footer class="site-footer">
-    <div class="container"><p>Fredrikstad Skiklubb · Designsystem</p></div>
+    <div class="container">
+      <div class="site-footer-inner">
+        <div>
+          <h3>Designsystem</h3>
+          <nav>
+            <a href="logo.html">Logo</a>
+            <a href="farger-typografi.html">Farger &amp; typografi</a>
+            <a href="komponenter.html">Komponenter</a>
+            <a href="trykksaker.html">Trykksaker</a>
+          </nav>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <img src="../assets/logo/fsk-logo.svg" alt="FSK logo">
+        <div>
+          <strong style="color:var(--color-offwhite);">Fredrikstad Skiklubb</strong><br>
+          <span>Designsystem</span>
+        </div>
+      </div>
+    </div>
   </footer>
+
 </body>
 </html>

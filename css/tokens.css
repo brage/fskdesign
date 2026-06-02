@@ -1,92 +1,125 @@
 /* ==========================================================================
    FSK Designsystem – Design tokens
-   --------------------------------------------------------------------------
-   Alt av farger, typografi og avstander defineres her som CSS-variabler.
-   Bytt ut PLASSHOLDER-verdiene under med de faktiske verdiene fra fsk.no /
-   PPT-malen når de foreligger. Søk etter «TODO» for å finne alt som skal inn.
+   Verdier hentet direkte fra fsk.no (DOM/CSS-inspeksjon) og bekreftet
+   mot PowerPoint-malen. Se research/design-rapport.md for kildedata.
    ========================================================================== */
 
-/* --- Webfonter ----------------------------------------------------------- */
-/* TODO: Legg fontfiler i /assets/fonts og avkommenter blokkene under.
-   Bytt ut font-family-navn slik at de matcher fontene fra fsk.no.
-
+/* --- Webfont: DM Sans (variabel TTF) ------------------------------------- */
 @font-face {
-  font-family: "FSK Sans";
-  src: url("../assets/fonts/fsk-sans.woff2") format("woff2");
-  font-weight: 400;
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "FSK Sans";
-  src: url("../assets/fonts/fsk-sans-bold.woff2") format("woff2");
-  font-weight: 700;
+  font-family: "DM Sans";
+  src: url("../assets/fonts/DMSans-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 1000;
+  font-style: italic;
   font-display: swap;
 }
-*/
+@font-face {
+  font-family: "DM Sans Fallback";
+  src: local("Arial");
+  ascent-override: 94.90%;
+  descent-override: 29.66%;
+  line-gap-override: 0.00%;
+  size-adjust: 104.53%;
+}
 
 :root {
-  /* --- Farger: merke (TODO: erstatt med fsk.no-verdier) ----------------- */
-  --color-primary:        #0a3d62; /* TODO: FSK primærfarge */
-  --color-primary-dark:   #062a44; /* TODO */
-  --color-primary-light:  #2e6da4; /* TODO */
-  --color-secondary:      #c0392b; /* TODO: FSK sekundærfarge */
-  --color-accent:         #f1c40f; /* TODO: aksent */
+  /* --- Fargepalett (fsk.no CSS-variabelnavn) ----------------------------- */
+  --color-dark-blue:   #091256;  /* tekst, header, footer */
+  --color-light-blue:  #c3cfeb;  /* sekundær knapp, ramme */
+  --color-bright-blue: #004890;  /* aksent, input-ramme   */
+  --color-green:       #415820;  /* primær CTA, badge     */
+  --color-light-green: #c6c075;  /* kort, hero-boks       */
+  --color-offwhite:    #fcf6f2;  /* overflater, knapper   */
+  --color-beige:       #f1eae5;  /* sidebakgrunn          */
+  --color-red:         #d8382f;  /* advarsel/fare         */
+  --color-peach:       #f8b99d;  /* aksent varm           */
+  --color-black:       #000000;
+  --color-white:       #ffffff;
 
-  /* --- Farger: nøytraler ----------------------------------------------- */
-  --color-ink:      #14181d;  /* tekst */
-  --color-ink-soft: #4a525b;  /* sekundær tekst */
-  --color-line:     #e2e6ea;  /* kantlinjer */
-  --color-surface:  #ffffff;  /* kort/flater */
-  --color-bg:       #f6f8fa;  /* sidebakgrunn */
-  --color-white:    #ffffff;
+  /* --- Semantiske aliaser ----------------------------------------------- */
+  --color-ink:      var(--color-dark-blue);
+  --color-ink-soft: color-mix(in srgb, var(--color-dark-blue) 55%, transparent);
+  --color-bg:       var(--color-beige);
+  --color-surface:  var(--color-offwhite);
+  --color-line:     var(--color-light-blue);
+  --color-primary:  var(--color-green);
+  --color-secondary: var(--color-light-blue);
+  --color-accent:   var(--color-bright-blue);
+  --color-danger:   var(--color-red);
+  --color-success:  var(--color-green);
 
-  /* --- Farger: semantiske ---------------------------------------------- */
-  --color-success: #2e7d32;
-  --color-warning: #ed6c02;
-  --color-danger:  #c62828;
-  --color-info:    #0277bd;
+  /* --- Typografi --------------------------------------------------------- */
+  --font-sans: "DM Sans", "DM Sans Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 
-  /* --- Typografi ------------------------------------------------------- */
-  /* TODO: bytt til fsk.no-fontene. Faller tilbake på systemfonter. */
-  --font-sans: "FSK Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-head: var(--font-sans);
-  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  /* Typeskala (fsk.no-verdier, fast rem – ikke fluid) */
+  --text-xs:   0.667rem;   /* ~10.7px – caption       */
+  --text-sm:   0.75rem;    /* 12px    – liten tekst   */
+  --text-base: 1rem;       /* 16px    – brødtekst     */
+  --text-lg:   1.333rem;   /* ~21.3px – ingress/h3    */
+  --text-xl:   2.083rem;   /* ~33.3px – h2            */
+  --text-2xl:  3rem;       /* 48px    – h1            */
 
-  /* Typeskala (1.250 – major third) */
-  --fs-100: 0.8rem;    /* 12.8px – caption */
-  --fs-200: 0.9rem;    /* 14.4px – small */
-  --fs-300: 1rem;      /* 16px   – brødtekst */
-  --fs-400: 1.25rem;   /* 20px   – h5/lead */
-  --fs-500: 1.563rem;  /* 25px   – h4 */
-  --fs-600: 1.953rem;  /* 31px   – h3 */
-  --fs-700: 2.441rem;  /* 39px   – h2 */
-  --fs-800: 3.052rem;  /* 49px   – h1 */
+  /* Bakoverkompatibel skala (brukes av eksisterende komponenter) */
+  --fs-100: var(--text-xs);
+  --fs-200: var(--text-sm);
+  --fs-300: var(--text-base);
+  --fs-400: var(--text-lg);
+  --fs-700: var(--text-xl);
+  --fs-800: var(--text-2xl);
 
-  --lh-tight:   1.15;
-  --lh-normal:  1.5;
-  --fw-regular: 400;
-  --fw-medium:  600;
-  --fw-bold:    700;
+  /* Linjehøyder */
+  --lh-tight:  1.25;
+  --lh-normal: 1.45;
+  --lh-loose:  1.5;
 
-  /* --- Avstand (8px-skala) --------------------------------------------- */
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-3: 0.75rem;
-  --space-4: 1rem;
-  --space-5: 1.5rem;
-  --space-6: 2rem;
-  --space-7: 3rem;
-  --space-8: 4rem;
+  /* Font-vekter */
+  --fw-normal:   400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
 
-  /* --- Form & flate ---------------------------------------------------- */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-pill: 999px;
+  /* Letter-spacing */
+  --tracking-tight: -0.025em;
+  --tracking-wide:   0.025em;
 
-  --shadow-sm: 0 1px 2px rgba(20, 24, 29, 0.08);
-  --shadow-md: 0 4px 12px rgba(20, 24, 29, 0.10);
-  --shadow-lg: 0 12px 32px rgba(20, 24, 29, 0.14);
+  /* --- Avstand (0.25rem = 4px base) ------------------------------------ */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-7:  1.75rem;   /* 28px */
+  --space-8:  2rem;      /* 32px */
+  --space-9:  2.25rem;   /* 36px */
+  --space-11: 2.75rem;   /* 44px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
 
-  --container: 1080px;
+  /* --- Border-radius (fsk.no) ------------------------------------------ */
+  --radius-xs:   0.55rem;   /* ikke aktivt i bruk */
+  --radius-sm:   10px;
+  --radius-md:   15px;
+  --radius-lg:   25px;      /* highlight-tekst    */
+  --radius-xl:   40px;      /* hero-boks          */
+  --radius-2xl:  50px;      /* nyhetskort         */
+  --radius-full: 9999px;    /* knapper, input     */
+
+  /* --- Skygger --------------------------------------------------------- */
+  --shadow-sm: 0 1px 2px rgba(9, 18, 86, 0.07);
+  --shadow-md: 0 4px 6px -1px rgba(9, 18, 86, 0.10), 0 2px 4px -2px rgba(9, 18, 86, 0.10);
+
+  /* --- Transitions ------------------------------------------------------ */
+  --transition: 0.15s cubic-bezier(.4, 0, .2, 1);
+  --ease-in:    cubic-bezier(.4, 0, 1, 1);
+
+  /* --- Container -------------------------------------------------------- */
+  --container: 1200px;
 }

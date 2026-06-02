@@ -1,122 +1,339 @@
 /* ==========================================================================
    FSK Designsystem – Komponenter
-   Gjenbrukbare UI-komponenter. Bruk disse klassene i trykksaker og websider.
+   Gjenbrukbare UI-komponenter. Alle verdier speiler fsk.no.
    ========================================================================== */
 
 /* --- Knapper ------------------------------------------------------------- */
+/*
+  5 varianter:
+    .btn                 → primær (grønn)
+    .btn--secondary      → sekundær (lysblå)
+    .btn--outline        → outline (mørk blå)
+    .btn--light          → lys overflate (offwhite)
+    .btn--sm             → liten versjon
+  Alle bruker rounded-full (fsk.no-mønster).
+*/
 .btn {
-  --btn-bg: var(--color-primary);
-  --btn-fg: var(--color-white);
+  --btn-bg: var(--color-green);
+  --btn-fg: var(--color-offwhite);
+  --btn-border: var(--color-green);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-2);
-  font: inherit;
-  font-weight: var(--fw-medium);
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--fw-normal);
   line-height: 1;
-  padding: 0.75em 1.25em;
-  border: 2px solid transparent;
-  border-radius: var(--radius-md);
+  padding: 0.75em 1.5em;
+  border: 2px solid var(--btn-border);
+  border-radius: var(--radius-full);
   background: var(--btn-bg);
   color: var(--btn-fg);
   text-decoration: none;
   cursor: pointer;
-  transition: filter 0.15s ease, background 0.15s ease;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
 }
-.btn:hover { filter: brightness(1.08); }
-.btn:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 2px; }
+.btn:hover {
+  filter: brightness(1.07);
+}
+.btn:focus-visible {
+  outline: 3px solid var(--color-bright-blue);
+  outline-offset: 3px;
+}
+.btn svg { width: 1.1em; height: 1.1em; flex-shrink: 0; }
 
-.btn--secondary { --btn-bg: var(--color-secondary); }
-.btn--ghost {
-  --btn-bg: transparent;
-  --btn-fg: var(--color-primary);
-  border-color: var(--color-primary);
+/* Sekundær – lysblå */
+.btn--secondary {
+  --btn-bg: var(--color-light-blue);
+  --btn-fg: var(--color-dark-blue);
+  --btn-border: var(--color-light-blue);
 }
-.btn--ghost:hover { background: var(--color-primary); --btn-fg: var(--color-white); }
-.btn--lg { font-size: var(--fs-400); }
-.btn--sm { font-size: var(--fs-200); padding: 0.5em 0.9em; }
+
+/* Outline / ghost – mørk blå */
+.btn--outline {
+  --btn-bg: transparent;
+  --btn-fg: var(--color-dark-blue);
+  --btn-border: var(--color-dark-blue);
+}
+.btn--outline:hover {
+  --btn-bg: var(--color-dark-blue);
+  --btn-fg: var(--color-offwhite);
+  filter: none;
+}
+
+/* Lys (på mørk bakgrunn) */
+.btn--light {
+  --btn-bg: var(--color-offwhite);
+  --btn-fg: var(--color-dark-blue);
+  --btn-border: var(--color-offwhite);
+}
+
+/* Størrelser */
+.btn--lg { font-size: var(--text-lg); padding: 0.7em 1.5em; }
+.btn--sm {
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  padding: 0.6em 1.2em;
+}
+
+/* Gruppe av knapper */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  align-items: center;
+}
 
 /* --- Kort ---------------------------------------------------------------- */
 .card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: var(--space-5);
+  background: var(--color-offwhite);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
-.card h3 { margin-bottom: var(--space-2); }
-.card--link { text-decoration: none; color: inherit; display: block; transition: box-shadow 0.15s, transform 0.15s; }
-.card--link:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+.card__body {
+  padding: var(--space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card__body h3 { margin-bottom: var(--space-3); }
+.card__body p { margin-bottom: var(--space-4); color: var(--color-ink-soft); }
 
-/* --- Badge --------------------------------------------------------------- */
+/* Kort med grønn bakgrunn (nyhetskort-stil) */
+.card--green {
+  background: var(--color-light-green);
+}
+
+/* Lenkekort (klikbart) */
+.card--link {
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+}
+.card--link:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Kort med bilde øverst */
+.card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card__img-placeholder {
+  width: 100%;
+  height: 200px;
+  background: var(--color-light-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__img-placeholder img {
+  width: 4rem;
+  height: 4rem;
+  opacity: 0.6;
+}
+
+/* --- Badge / Tag --------------------------------------------------------- */
 .badge {
-  display: inline-block;
-  font-size: var(--fs-100);
-  font-weight: var(--fw-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  padding: 0.25em 0.7em;
-  border-radius: var(--radius-pill);
-  background: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--fw-normal);
+  padding: 0.4em 0.9em;
+  border-radius: var(--radius-full);
+  background: var(--color-green);
+  color: var(--color-offwhite);
+  line-height: 1;
+}
+.badge svg { width: 1em; height: 1em; }
+
+.badge--blue {
+  background: var(--color-light-blue);
+  color: var(--color-dark-blue);
+}
+.badge--red {
+  background: var(--color-red);
   color: var(--color-white);
 }
-.badge--success { background: var(--color-success); }
-.badge--warning { background: var(--color-warning); }
-.badge--danger  { background: var(--color-danger); }
+.badge--beige {
+  background: var(--color-beige);
+  color: var(--color-dark-blue);
+}
 
 /* --- Skjema -------------------------------------------------------------- */
-.field { margin-bottom: var(--space-4); }
-.field label { display: block; font-weight: var(--fw-medium); margin-bottom: var(--space-2); }
+.field { margin-bottom: var(--space-5); }
+.field label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--fw-normal);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+}
 .field input,
 .field select,
 .field textarea {
   width: 100%;
-  font: inherit;
-  padding: 0.6em 0.8em;
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-md);
-  background: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  padding: 0.7em 1.2em;
+  border: 1px solid var(--color-bright-blue);
+  border-radius: var(--radius-full);
+  background: var(--color-offwhite);
+  color: var(--color-ink);
+  transition: border-color var(--transition);
+  appearance: none;
 }
+.field textarea { border-radius: var(--radius-lg); resize: vertical; min-height: 6em; }
+.field input:hover,
+.field select:hover,
+.field textarea:hover  { border-color: var(--color-light-blue); }
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  border-color: var(--color-bright-blue);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-bright-blue) 20%, transparent);
 }
 
-/* --- Fargekort (farger & typografi) -------------------------------------- */
-.swatches { display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+/* Select-wrapper med stilisert bakgrunn */
+.select-wrap {
+  position: relative;
+  display: inline-block;
+}
+.select-wrap select {
+  padding-right: 2.5em;
+  background: var(--color-light-blue);
+  border-color: var(--color-light-blue);
+  color: var(--color-dark-blue);
+  cursor: pointer;
+}
+.select-wrap::after {
+  content: "▾";
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-dark-blue);
+}
+
+/* --- Fargekort (farger & typografi-side) --------------------------------- */
+.swatches {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+}
 .swatch {
-  border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   overflow: hidden;
-  background: var(--color-surface);
+  background: var(--color-offwhite);
   cursor: pointer;
   text-align: left;
   font: inherit;
   padding: 0;
+  border: 1px solid rgba(9, 18, 86, 0.1);
+  transition: transform var(--transition);
 }
-.swatch__color { height: 96px; }
-.swatch__meta { padding: var(--space-3); }
-.swatch__name { font-weight: var(--fw-bold); display: block; }
-.swatch__hex { font-family: var(--font-mono); font-size: var(--fs-200); color: var(--color-ink-soft); }
-.swatch.copied .swatch__hex::after { content: " ✓ kopiert"; color: var(--color-success); }
+.swatch:hover { transform: translateY(-2px); }
+.swatch__color { height: 80px; }
+.swatch__meta { padding: var(--space-3) var(--space-3) var(--space-4); }
+.swatch__name { font-weight: var(--fw-bold); font-size: var(--text-sm); display: block; margin-bottom: var(--space-1); }
+.swatch__token { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-soft); display: block; margin-bottom: var(--space-1); }
+.swatch__hex { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-soft); }
+.swatch.copied .swatch__hex::after { content: " ✓"; color: var(--color-green); }
 
 /* --- Typeprøve ----------------------------------------------------------- */
 .type-row {
   display: flex;
   align-items: baseline;
   gap: var(--space-5);
-  padding-block: var(--space-3);
+  padding-block: var(--space-4);
   border-bottom: 1px solid var(--color-line);
+  flex-wrap: wrap;
 }
-.type-row .label { flex: 0 0 7rem; color: var(--color-ink-soft); font-size: var(--fs-200); font-family: var(--font-mono); }
+.type-row .label {
+  flex: 0 0 8rem;
+  color: var(--color-ink-soft);
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+}
 
 /* --- Do / Don't ---------------------------------------------------------- */
 .dodont { display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.dodont__item { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--color-line); background: var(--color-surface); }
-.dodont__head { padding: var(--space-3) var(--space-4); font-weight: var(--fw-bold); color: var(--color-white); }
-.dodont__body { padding: var(--space-4); }
-.dodont--do    .dodont__head { background: var(--color-success); }
-.dodont--dont  .dodont__head { background: var(--color-danger); }
+.dodont__item { border-radius: var(--radius-2xl); overflow: hidden; background: var(--color-offwhite); }
+.dodont__head { padding: var(--space-3) var(--space-5); font-weight: var(--fw-bold); color: var(--color-offwhite); font-size: var(--text-sm); }
+.dodont__body { padding: var(--space-5); }
+.dodont--do   .dodont__head { background: var(--color-green); }
+.dodont--dont .dodont__head { background: var(--color-red); }
+
+/* --- Logo-visning -------------------------------------------------------- */
+.logo-stage {
+  border-radius: var(--radius-2xl);
+  padding: var(--space-11);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+.logo-stage img { max-width: 280px; max-height: 120px; width: auto; }
+.logo-stage--white  { background: var(--color-white); }
+.logo-stage--beige  { background: var(--color-beige); }
+.logo-stage--green  { background: var(--color-light-green); }
+.logo-stage--dark   { background: var(--color-dark-blue); }
+
+/* --- Ikonkatalog --------------------------------------------------------- */
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-4);
+}
+.icon-item {
+  background: var(--color-offwhite);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+.icon-item img { width: 72px; height: 72px; }
+.icon-item span { font-size: var(--text-xs); font-family: var(--font-mono); color: var(--color-ink-soft); }
+
+/* --- Mal-preview (trykksaker) -------------------------------------------- */
+.template-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.template-card {
+  background: var(--color-offwhite);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.template-card__preview {
+  background: var(--color-dark-blue);
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.template-card__preview-inner {
+  transform: scale(0.35);
+  transform-origin: center;
+  position: absolute;
+}
+.template-card__body { padding: var(--space-5); }
+.template-card__body h3 { margin-bottom: var(--space-2); }
+.template-card__body p { font-size: var(--text-sm); color: var(--color-ink-soft); margin-bottom: var(--space-4); }
