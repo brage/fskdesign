@@ -337,3 +337,85 @@
 .template-card__body { padding: var(--space-5); }
 .template-card__body h3 { margin-bottom: var(--space-2); }
 .template-card__body p { font-size: var(--text-sm); color: var(--color-ink-soft); margin-bottom: var(--space-4); }
+
+/* --- AI-agent guider ----------------------------------------------------- */
+.agent-rule-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.agent-rule {
+  background: var(--color-offwhite);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+}
+.agent-rule h3 { margin-bottom: var(--space-3); }
+.agent-rule p { font-size: var(--text-sm); color: var(--color-ink-soft); margin-bottom: 0; }
+.agent-rule__kicker {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-bright-blue);
+  margin-bottom: var(--space-3);
+}
+.prompt-box {
+  background: var(--color-dark-blue);
+  color: var(--color-offwhite);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-6);
+}
+.prompt-box h3,
+.prompt-box p { color: var(--color-offwhite); }
+.prompt-box p { opacity: 0.75; }
+.prompt-box pre {
+  background: rgba(252, 246, 242, 0.08);
+  border: 1px solid rgba(195, 207, 235, 0.25);
+  margin: var(--space-5) 0 0;
+}
+.token-list {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-5) 0 0;
+}
+.token-list code {
+  display: block;
+  background: var(--color-offwhite);
+  color: var(--color-dark-blue);
+  border: 1px solid var(--color-line);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+}
+.workflow-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.workflow-strip span {
+  background: var(--color-offwhite);
+  color: var(--color-dark-blue);
+  border: 1px solid color-mix(in srgb, var(--color-dark-blue) 18%, transparent);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+}
+.checklist {
+  display: grid;
+  gap: var(--space-3);
+  padding: 0;
+  margin: var(--space-5) 0 0;
+  list-style: none;
+}
+.checklist li {
+  background: var(--color-offwhite);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-5);
+  font-size: var(--text-sm);
+}
+.checklist li::before {
+  content: "✓";
+  color: var(--color-green);
+  font-weight: var(--fw-bold);
+  margin-right: var(--space-2);
+}

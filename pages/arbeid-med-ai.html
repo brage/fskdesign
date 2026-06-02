@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobb med AI – FSK Designsystem</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/fsk-logo-emblem.svg">
+  <link rel="icon" type="image/png" href="../assets/logo/fsk-logo-emblem.png">
+  <meta name="description" content="Slik kan du bruke ChatGPT, Gemini, Claude og andre AI-verktøy sammen med FSK designsystem.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo/fsk-logo-emblem.svg" alt="FSK logo">
+        <span class="brand-name">
+          <span>Fredrikstad</span>
+          <span>Skiklubb</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Hovedmeny">
+        <a href="logo.html">Logo</a>
+        <a href="farger-typografi.html">Farger &amp; typografi</a>
+        <a href="komponenter.html">Komponenter</a>
+        <a href="trykksaker.html">Trykksaker</a>
+        <a href="ai-agenter.html">AI-agenter</a>
+        <a href="arbeid-med-ai.html" aria-current="page">Jobb med AI</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-hero">
+      <h1>Jobb med AI</h1>
+      <p class="lead">En praktisk arbeidsflyt for å bruke ChatGPT, Gemini, Claude og andre verktøy til å lage FSK-materiell uten å miste merkevaren.</p>
+    </div>
+
+    <section class="section">
+      <h2>Arbeidsflyt</h2>
+      <div class="agent-rule-grid">
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">1 / brief</span>
+          <h3>Skriv kort brief</h3>
+          <p>Beskriv målgruppe, kanal, format, dato, sted, budskap og ønsket handling. Legg ved eventuelle bilder eller tekst som må med.</p>
+        </div>
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">2 / kontekst</span>
+          <h3>Gi designsystemet</h3>
+          <p>Lenk til <code>https://brage.github.io/fskdesign</code> og be verktøyet følge tokens, logo, typografi og maler.</p>
+        </div>
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">3 / produksjon</span>
+          <h3>Be om konkret output</h3>
+          <p>Be om HTML/CSS, ferdig prompt til bildeverktøy, plakattekst eller layoutforslag. Spesifiser format før verktøyet starter.</p>
+        </div>
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">4 / kvalitet</span>
+          <h3>Kontroller manuelt</h3>
+          <p>Sjekk dato, lenker, logo, kontrast, lesbarhet og at teksten holder seg innenfor formatet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Felles prompt for ChatGPT, Gemini og Claude</h2>
+      <div class="prompt-box">
+        <h3>Startprompt</h3>
+        <p>Bruk denne når du vil at verktøyet skal lage eller forbedre materiell.</p>
+        <pre><code>Du skal hjelpe Fredrikstad Skiklubb med å lage materiell i tråd med designsystemet:
+https://brage.github.io/fskdesign
+
+Følg dette:
+- Bruk FSKs farger, logo, DM Sans og eksisterende maler.
+- Ikke finn opp ny logo, nye farger eller en annen visuell stil.
+- Prioriter lesbarhet, tydelig hierarki og kort tekst.
+- Lag innhold som passer [A4-plakat / A5-flyer / 1080x1080 / web].
+- Lever [HTML/CSS / tekstforslag / layoutbeskrivelse / bildegenereringsprompt].
+
+Brief:
+[lim inn arrangement, målgruppe, dato, sted, praktisk info og ønsket handling]</code></pre>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Hva du bør be hvert verktøy om</h2>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card__body">
+            <h3>ChatGPT</h3>
+            <p>God til å lage struktur, korte tekster, HTML/CSS-varianter, kontrollister og nye promptversjoner.</p>
+            <a class="btn btn--sm" href="ai-agenter.html">Hent agentprompt</a>
+          </div>
+        </div>
+        <div class="card card--green">
+          <div class="card__body">
+            <h3>Gemini</h3>
+            <p>God til å jobbe med flere vedlegg, tolke bilder og lage forslag basert på presentasjoner eller eksisterende materiell.</p>
+            <a class="btn btn--sm btn--outline" href="trykksaker.html">Se maler</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__body">
+            <h3>Claude</h3>
+            <p>God til lange dokumenter, presise redaksjonelle vurderinger og ryddig omskriving av arrangementstekster.</p>
+            <a class="btn btn--sm btn--secondary" href="farger-typografi.html">Se tokens</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Eksempel: fra brief til plakat</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card__body">
+            <h3>Brief</h3>
+            <pre><code>Arrangement: Skileik for barn
+Dato: Søndag 18. januar
+Tid: 11:00 til 13:00
+Sted: Fredrikstad Skiklubb
+Målgruppe: Barn 5 til 10 år
+Handling: Meld deg på via nettsiden
+Format: A4-plakat</code></pre>
+          </div>
+        </div>
+        <div class="card card--green">
+          <div class="card__body">
+            <h3>Bestilling til AI</h3>
+            <pre><code>Lag en A4-plakat i HTML/CSS med FSK designsystem.
+Bruk plakatmalen som struktur, offisiell logo, DM Sans,
+mørk blå tekst og grønn CTA. Hold teksten kort og legg
+inn tydelig dato, tid, sted og påmelding.</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Kvalitetssjekk før publisering</h2>
+      <ul class="checklist">
+        <li>Stemmer dato, klokkeslett, sted og kontaktinfo?</li>
+        <li>Er logoen hentet fra <code>assets/logo/</code>?</li>
+        <li>Bruker layouten bare FSK-farger og DM Sans?</li>
+        <li>Er tittelen kort nok til å være tydelig på mobil og print?</li>
+        <li>Er det tydelig hva mottakeren skal gjøre videre?</li>
+        <li>Er filen testet i nettleser før PDF eller skjermbilde eksporteres?</li>
+      </ul>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Vanlige feil å unngå</h2>
+      <div class="dodont">
+        <div class="dodont__item dodont--do">
+          <div class="dodont__head">Gjør dette</div>
+          <div class="dodont__body">
+            <ul style="margin:0; padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Gi AI-en konkret format og kanal.</li>
+              <li>Lim inn merkegrunnlag fra AI-agent-siden.</li>
+              <li>Be om to til tre alternativer, ikke ti.</li>
+              <li>Be AI-en forklare hva den har valgt.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dodont__item dodont--dont">
+          <div class="dodont__head">Unngå dette</div>
+          <div class="dodont__body">
+            <ul style="margin:0; padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Ikke be om en "ny logo" eller "helt ny stil".</li>
+              <li>Ikke godta farger utenfor FSK-paletten.</li>
+              <li>Ikke publiser uten manuell faktasjekk.</li>
+              <li>Ikke fyll plakater med for mye tekst.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer-inner">
+        <div>
+          <h3>Designsystem</h3>
+          <nav>
+            <a href="logo.html">Logo</a>
+            <a href="farger-typografi.html">Farger &amp; typografi</a>
+            <a href="komponenter.html">Komponenter</a>
+            <a href="trykksaker.html">Trykksaker</a>
+            <a href="ai-agenter.html">AI-agenter</a>
+            <a href="arbeid-med-ai.html">Jobb med AI</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Ressurser</h3>
+          <nav>
+            <a href="ai-agenter.html">Agentgrunnlag</a>
+            <a href="../assets/templates/plakat-a4.html">Plakat A4</a>
+            <a href="../assets/templates/flyer-a5.html">Flyer A5</a>
+          </nav>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <img src="../assets/logo/fsk-logo-emblem.svg" alt="FSK logo">
+        <div>
+          <strong style="color:var(--color-offwhite);">Fredrikstad Skiklubb</strong><br>
+          <span>Designsystem</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

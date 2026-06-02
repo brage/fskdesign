@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-agenter – FSK Designsystem</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/logo/fsk-logo-emblem.svg">
+  <link rel="icon" type="image/png" href="../assets/logo/fsk-logo-emblem.png">
+  <meta name="description" content="Maskinlesbare regler og promptgrunnlag for AI-agenter som skal lage materiell for Fredrikstad Skiklubb.">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">
+        <img src="../assets/logo/fsk-logo-emblem.svg" alt="FSK logo">
+        <span class="brand-name">
+          <span>Fredrikstad</span>
+          <span>Skiklubb</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Hovedmeny">
+        <a href="logo.html">Logo</a>
+        <a href="farger-typografi.html">Farger &amp; typografi</a>
+        <a href="komponenter.html">Komponenter</a>
+        <a href="trykksaker.html">Trykksaker</a>
+        <a href="ai-agenter.html" aria-current="page">AI-agenter</a>
+        <a href="arbeid-med-ai.html">Jobb med AI</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <div class="page-hero">
+      <h1>AI-agenter</h1>
+      <p class="lead">Denne siden gir AI-agenter et presist grunnlag for å lage plakater, flyere og sosiale medier-innhold i FSKs visuelle stil.</p>
+    </div>
+
+    <section class="section">
+      <h2>Agentens oppdrag</h2>
+      <div class="agent-rule-grid">
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">01 / identitet</span>
+          <h3>Bevar FSK-uttrykket</h3>
+          <p>Bruk DM Sans, FSK-paletten, offisielle logoer og en enkel, aktiv klubb-tone. Ikke lag nye logoer eller alternative fargepaletter.</p>
+        </div>
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">02 / format</span>
+          <h3>Start fra mal</h3>
+          <p>Velg A4-plakat, A5-flyer eller 1080x1080 basert på kanal. Bruk eksisterende HTML-maler som struktur.</p>
+        </div>
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">03 / innhold</span>
+          <h3>Prioriter tydelighet</h3>
+          <p>Arrangement, tidspunkt, sted og handling må være lett å skanne. Skriv kort, konkret og inkluder medlemsrelevant informasjon.</p>
+        </div>
+        <div class="agent-rule">
+          <span class="agent-rule__kicker">04 / kontroll</span>
+          <h3>Sjekk før levering</h3>
+          <p>Verifiser logo, kontrast, dato, lenker, kontaktinfo og at teksten ikke bryter layouten på formatet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Maskinlesbart merkegrunnlag</h2>
+      <p>Dette kan kopieres direkte inn i en agent som systemkontekst eller prosjektinstruks.</p>
+      <pre><code>{
+  "brand": "Fredrikstad Skiklubb",
+  "short_name": "FSK",
+  "base_url": "https://brage.github.io/fskdesign",
+  "font": "DM Sans",
+  "colors": {
+    "dark_blue": "#091256",
+    "green": "#415820",
+    "light_green": "#c6c075",
+    "bright_blue": "#004890",
+    "light_blue": "#c3cfeb",
+    "offwhite": "#fcf6f2",
+    "beige": "#f1eae5",
+    "red": "#d8382f",
+    "peach": "#f8b99d"
+  },
+  "logos": {
+    "primary": "/assets/logo/fsk-logo.svg",
+    "inverted": "/assets/logo/fsk-logo-inv.svg",
+    "emblem": "/assets/logo/fsk-logo-emblem.svg"
+  },
+  "templates": {
+    "poster_a4": "/assets/templates/plakat-a4.html",
+    "flyer_a5": "/assets/templates/flyer-a5.html",
+    "social_1080": "/assets/templates/sosiale-medier-1080.html"
+  },
+  "rules": [
+    "Use official logo files only",
+    "Use DM Sans for all text",
+    "Use dark blue for main text",
+    "Use green for primary calls to action",
+    "Keep generous whitespace around the logo",
+    "Do not stretch, recolor or redraw the logo",
+    "Avoid decorative effects that are not in the design system"
+  ]
+}</code></pre>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Rask agentprompt</h2>
+      <div class="prompt-box">
+        <h3>Generer en FSK-plakat</h3>
+        <p>Bytt ut feltene i klammer før du sender prompten til en AI-agent.</p>
+        <pre><code>Du er en designagent for Fredrikstad Skiklubb.
+Lag en [A4-plakat / A5-flyer / 1080x1080-post] basert på FSK designsystem:
+- Font: DM Sans
+- Farger: mørk blå #091256, grønn #415820, lys grønn #c6c075, offwhite #fcf6f2, beige #f1eae5
+- Logo: bruk /assets/logo/fsk-logo.svg eller /assets/logo/fsk-logo-emblem.svg
+- Stil: tydelig, klubbnær, aktiv, enkel og lett å lese
+
+Innhold:
+- Tittel: [tittel]
+- Dato/tid: [dato og tidspunkt]
+- Sted: [sted]
+- Målgruppe: [barn/ungdom/voksne/alle]
+- Praktisk info: [kort punktliste]
+- Handling: [meld deg på / møt opp / les mer]
+
+Lever som HTML/CSS som bruker FSK tokens og passer valgt format.</code></pre>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Ressurser agenten bør bruke</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card__body">
+            <h3>Design tokens</h3>
+            <p>Alle grunnverdier ligger i <code>css/tokens.css</code>. Bruk variabler når du skriver HTML/CSS.</p>
+            <div class="token-list">
+              <code>var(--color-dark-blue)</code>
+              <code>var(--color-green)</code>
+              <code>var(--color-light-green)</code>
+              <code>var(--font-sans)</code>
+            </div>
+          </div>
+        </div>
+        <div class="card card--green">
+          <div class="card__body">
+            <h3>Ikoner</h3>
+            <p>Ikoner kan brukes som kategorianker, men skal ikke erstatte logo. Velg ett til tre ikoner per flate.</p>
+            <div class="token-list">
+              <code>assets/icons/snofnugg.svg</code>
+              <code>assets/icons/orienteringsloper.svg</code>
+              <code>assets/icons/flerepersoner.svg</code>
+              <code>assets/icons/aktivitet.svg</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Kontrolliste for agentoutput</h2>
+      <ul class="checklist">
+        <li>Logoen er offisiell SVG og har nok luft rundt seg.</li>
+        <li>Alle farger finnes i FSK-paletten.</li>
+        <li>Hovedbudskap, dato, sted og handling er synlig uten å måtte lese alt.</li>
+        <li>Teksten er kort nok til formatet og bryter ikke layouten.</li>
+        <li>Kontrast er god mellom tekst og bakgrunn.</li>
+        <li>Output kan åpnes lokalt og eksporteres til PDF eller skjermbilde.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer-inner">
+        <div>
+          <h3>Designsystem</h3>
+          <nav>
+            <a href="logo.html">Logo</a>
+            <a href="farger-typografi.html">Farger &amp; typografi</a>
+            <a href="komponenter.html">Komponenter</a>
+            <a href="trykksaker.html">Trykksaker</a>
+            <a href="ai-agenter.html">AI-agenter</a>
+            <a href="arbeid-med-ai.html">Jobb med AI</a>
+          </nav>
+        </div>
+        <div>
+          <h3>Agentressurser</h3>
+          <nav>
+            <a href="../css/tokens.css">Design tokens</a>
+            <a href="../assets/templates/plakat-a4.html">Plakat A4</a>
+            <a href="../assets/templates/sosiale-medier-1080.html">Sosiale medier</a>
+          </nav>
+        </div>
+      </div>
+      <div class="site-footer-bottom">
+        <img src="../assets/logo/fsk-logo-emblem.svg" alt="FSK logo">
+        <div>
+          <strong style="color:var(--color-offwhite);">Fredrikstad Skiklubb</strong><br>
+          <span>Designsystem</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
