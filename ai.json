@@ -1,5 +1,5 @@
 {
-  "schema": "https://brage.github.io/fskdesign/ai",
+  "schema": "https://brage.github.io/fskdesign/ai.json",
   "schema_version": "1.0.0",
   "name": "FSK Designsystem",
   "brand": {
@@ -7,7 +7,7 @@
     "short_name": "FSK",
     "language": "nb-NO",
     "base_url": "https://brage.github.io/fskdesign",
-    "public_ai_url": "https://brage.github.io/fskdesign/ai",
+    "public_ai_url": "https://brage.github.io/fskdesign/ai.json",
     "tone": [
       "tydelig",
       "aktiv",
