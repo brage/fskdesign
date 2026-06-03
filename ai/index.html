@@ -5,15 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FSK Designsystem for AI-agenter</title>
   <meta name="description" content="Maskinlesbar JSON for Fredrikstad Skiklubb sitt designsystem.">
-  <link rel="canonical" href="https://brage.github.io/fskdesign/ai.json">
+  <link rel="canonical" href="https://brage.github.io/fskdesign/ai/">
   <link rel="alternate" type="application/json" href="../ai.json" title="FSK Designsystem JSON">
-  <meta http-equiv="refresh" content="0; url=../ai.json">
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      color: #091256;
+      background: #f1eae5;
+    }
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fcf6f2;
+      padding: 2rem;
+      border-radius: 24px;
+    }
+    h1, h2 { line-height: 1.15; }
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    pre {
+      overflow-x: auto;
+      background: #091256;
+      color: #fcf6f2;
+      padding: 1rem;
+      border-radius: 12px;
+    }
+    a { color: #004890; }
+  </style>
 </head>
 <body>
   <main>
     <h1>FSK Designsystem for AI-agenter</h1>
-    <p>Maskinlesbar JSON ligger på <a href="../ai.json">https://brage.github.io/fskdesign/ai.json</a>.</p>
-    <p>Bruk denne URL-en direkte i ChatGPT, Gemini, Claude og andre agenter.</p>
+    <p>Denne siden er laget for ChatGPT, Gemini, Claude og andre agenter som ikke alltid leser JSON-filer direkte via nettsøk.</p>
+    <p>Komplett maskinlesbar JSON ligger på <a href="../ai.json">https://brage.github.io/fskdesign/ai.json</a>.</p>
+
+    <h2>Agentinstruks</h2>
+    <p>Du er en designagent for Fredrikstad Skiklubb. Følg FSK designsystem strengt. Bruk offisielle logoer, DM Sans, FSK-farger og eksisterende maler. Ikke finn opp nye merkeelementer. Prioriter tydelig informasjon, lesbarhet og korrekt innhold.</p>
+
+    <h2>Brand</h2>
+    <ul>
+      <li>Navn: Fredrikstad Skiklubb</li>
+      <li>Kortnavn: FSK</li>
+      <li>Tone: tydelig, aktiv, klubbnær, inkluderende, praktisk</li>
+      <li>Base-URL: https://brage.github.io/fskdesign</li>
+    </ul>
+
+    <h2>Farger</h2>
+    <pre><code>--color-dark-blue:   #091256  tekst, header, footer
+--color-green:       #415820  primær CTA, badges
+--color-light-green: #c6c075  hero, kort, highlights
+--color-bright-blue: #004890  lenker, fokus, input-rammer
+--color-light-blue:  #c3cfeb  sekundær knapp, rammer
+--color-offwhite:    #fcf6f2  overflater, knapper
+--color-beige:       #f1eae5  sidebakgrunn
+--color-red:         #d8382f  advarsel og viktig info
+--color-peach:       #f8b99d  varm aksent</code></pre>
+
+    <h2>Typografi</h2>
+    <ul>
+      <li>Font: DM Sans</li>
+      <li>Font-URL: https://brage.github.io/fskdesign/assets/fonts/DMSans-VariableFont_opsz,wght.ttf</li>
+      <li>H1: 3rem, bold 700</li>
+      <li>H2: 2.083rem, semibold 600</li>
+      <li>Brødtekst: 1rem, normal 400, line-height 1.45</li>
+    </ul>
+
+    <h2>Logoer</h2>
+    <ul>
+      <li>Primær logo: https://brage.github.io/fskdesign/assets/logo/fsk-logo.svg</li>
+      <li>Invertert logo: https://brage.github.io/fskdesign/assets/logo/fsk-logo-inv.svg</li>
+      <li>Emblem: https://brage.github.io/fskdesign/assets/logo/fsk-logo-emblem.svg</li>
+    </ul>
+
+    <h2>Maler</h2>
+    <ul>
+      <li>A4-plakat: https://brage.github.io/fskdesign/assets/templates/plakat-a4.html</li>
+      <li>A5-flyer: https://brage.github.io/fskdesign/assets/templates/flyer-a5.html</li>
+      <li>Sosiale medier 1080x1080: https://brage.github.io/fskdesign/assets/templates/sosiale-medier-1080.html</li>
+    </ul>
+
+    <h2>Regler</h2>
+    <ul>
+      <li>Bruk offisielle SVG-logoer fra assets/logo.</li>
+      <li>Bruk DM Sans for all tekst.</li>
+      <li>Bruk kun FSK-paletten over.</li>
+      <li>Bruk mørk blå som hovedfarge for tekst.</li>
+      <li>Bruk grønn som primær handlingsfarge.</li>
+      <li>Ikke lag ny logo, ikke endre logoens farger og ikke strekk logoen.</li>
+      <li>Ikke bruk gammel logo i nytt materiell.</li>
+      <li>Hold plakater korte og skannbare: tittel, dato, tid, sted, målgruppe og handling.</li>
+    </ul>
+
+    <h2>Prompt å følge</h2>
+    <pre><code>Lag materiell for Fredrikstad Skiklubb basert på FSK designsystem.
+Bruk DM Sans, FSK-paletten, offisiell logo og relevante maler.
+Ikke finn opp nye merkeelementer.
+Lever som HTML/CSS eller en tydelig layoutbeskrivelse.
+Før levering: oppgi hvilke farger, logoer, fonter og regler du brukte.</code></pre>
   </main>
 </body>
 </html>

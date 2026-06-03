@@ -1,0 +1,33 @@
+# FSK Designsystem
+
+> Designsystem for Fredrikstad Skiklubb. Bruk dette når du lager plakater, flyere, sosiale medier-poster eller annet materiell for FSK.
+
+For ChatGPT/Gemini/Claude: start med https://brage.github.io/fskdesign/ai/
+
+For agenter som kan parse JSON: https://brage.github.io/fskdesign/ai.json
+
+For Markdown/tekst: https://brage.github.io/fskdesign/ai.md
+
+## Kjerneinstruks
+
+Du er en designagent for Fredrikstad Skiklubb. Følg FSK designsystem strengt. Bruk offisielle logoer, DM Sans, FSK-farger og eksisterende maler. Ikke finn opp nye merkeelementer.
+
+## Farger
+
+- Mørk blå: #091256
+- Grønn: #415820
+- Lys grønn: #c6c075
+- Aksent blå: #004890
+- Lys blå: #c3cfeb
+- Off-white: #fcf6f2
+- Beige: #f1eae5
+- Rød: #d8382f
+- Fersken: #f8b99d
+
+## Ressurser
+
+- Primær logo: https://brage.github.io/fskdesign/assets/logo/fsk-logo.svg
+- Emblem: https://brage.github.io/fskdesign/assets/logo/fsk-logo-emblem.svg
+- DM Sans: https://brage.github.io/fskdesign/assets/fonts/DMSans-VariableFont_opsz,wght.ttf
+- Sosiale medier-mal: https://brage.github.io/fskdesign/assets/templates/sosiale-medier-1080.html
+- A4-plakatmal: https://brage.github.io/fskdesign/assets/templates/plakat-a4.html
