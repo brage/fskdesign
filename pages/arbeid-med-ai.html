@@ -156,44 +156,39 @@ inn tydelig dato, tid, sted og påmelding.</code></pre>
       <h2>Bruk designskill direkte i AI-verktøy</h2>
       <p>Mappen <code>Skill/</code> i dette designsystemet inneholder en ferdig skill-fil (<code>Skill.md</code>) med alle farger, regler, logoer og maler innebygd. Last den inn én gang – så følger AI-en FSK-designet automatisk hver gang du ber om materiell.</p>
 
-      <div class="grid grid-3" style="margin-top: var(--space-8);">
+      <p>
+        <a class="btn btn--sm" href="../Skill.zip" download>Last ned Skill.zip (104 KB)</a>
+      </p>
+
+      <div class="grid grid-2" style="margin-top: var(--space-8);">
 
         <div class="card">
           <div class="card__body">
-            <h3>ChatGPT</h3>
+            <h3>ChatGPT – varig oppsett</h3>
+            <p style="font-size:var(--text-sm); color:var(--color-ink-soft); margin:0 0 var(--space-4);">Lag en Custom GPT som alltid kjenner FSK-designet.</p>
             <ol style="margin:0 0 var(--space-4); padding-left:var(--space-5); font-size:var(--text-sm);">
-              <li>Gå til <strong>chatgpt.com</strong> og klikk på <em>Utforsk GPT-er → Opprett en GPT</em>.</li>
-              <li>Under <em>Konfigurer</em>: lim inn innholdet fra <code>Skill/Skill.md</code> i <em>Instruksjoner</em>-feltet.</li>
-              <li>Last opp filene i <code>Skill/assets/</code> via <em>Legg til filer</em>.</li>
-              <li>Lagre GPT-en – den husker designsystemet i alle fremtidige samtaler.</li>
+              <li>Last ned <strong>Skill.zip</strong> fra lenken over og pakk den ut lokalt.</li>
+              <li>Gå til <strong>chatgpt.com → Utforsk GPT-er → Opprett en GPT</strong>.</li>
+              <li>Klikk <em>Konfigurer</em> og lim inn hele innholdet fra <code>Skill.md</code> i <em>Instruksjoner</em>-feltet.</li>
+              <li>Under <em>Kunnskap</em> → <em>Last opp filer</em>: last opp <strong>Skill.zip</strong>. ChatGPT får da tilgang til alle maler, ikoner og tokens.</li>
+              <li>Klikk <em>Lagre</em> – GPT-en husker designsystemet i alle fremtidige samtaler.</li>
             </ol>
-            <p style="font-size:var(--text-sm); margin:0;"><strong>Alternativ (engangsbruk):</strong> Start en ny samtale og last opp <code>Skill.md</code> som vedlegg.</p>
+            <p style="font-size:var(--text-sm); margin:0; border-top:1px solid var(--color-line); padding-top:var(--space-3);"><strong>Engangsbruk:</strong> Start en vanlig samtale, klikk bindersikonet og last opp <code>Skill.md</code> som vedlegg. Virker kun i den samtalen.</p>
           </div>
         </div>
 
         <div class="card card--green">
           <div class="card__body">
-            <h3>Claude</h3>
+            <h3>Claude – varig oppsett</h3>
+            <p style="font-size:var(--text-sm); margin:0 0 var(--space-4);">Bruk Prosjekter på claude.ai for å lagre skillen én gang for alle.</p>
             <ol style="margin:0 0 var(--space-4); padding-left:var(--space-5); font-size:var(--text-sm);">
-              <li>Gå til <strong>claude.ai</strong> og åpne eller opprett et <em>Prosjekt</em>.</li>
-              <li>Klikk på prosjektnavnet → <em>Prosjektinstruksjoner</em>.</li>
-              <li>Lim inn innholdet fra <code>Skill/Skill.md</code> som prosjektinstruks.</li>
-              <li>Alle nye samtaler i prosjektet bruker da designsystemet automatisk.</li>
+              <li>Last ned <strong>Skill.zip</strong> fra lenken over og pakk den ut lokalt.</li>
+              <li>Gå til <strong>claude.ai → Prosjekter → Nytt prosjekt</strong> (kall det f.eks. «FSK Materiell»).</li>
+              <li>Klikk prosjektnavnet → <em>Prosjektinstruksjoner</em> og lim inn hele innholdet fra <code>Skill.md</code>.</li>
+              <li>Klikk <em>Legg til innhold</em> og last opp <strong>Skill.zip</strong>. Claude leser da alle maler og assets direkte fra ZIP-en.</li>
+              <li>Alle nye samtaler i prosjektet bruker FSK-designet automatisk.</li>
             </ol>
-            <p style="font-size:var(--text-sm); margin:0;"><strong>Alternativ (engangsbruk):</strong> Start en samtale og dra <code>Skill.md</code> inn som vedlegg.</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card__body">
-            <h3>Claude Code</h3>
-            <ol style="margin:0 0 var(--space-4); padding-left:var(--space-5); font-size:var(--text-sm);">
-              <li>Klon eller ha designsystemet lokalt.</li>
-              <li>Åpne <code>CLAUDE.md</code> i prosjektroten (opprett om den ikke finnes).</li>
-              <li>Legg til linjen: <code>@Skill/Skill.md</code> for å inkludere skillen automatisk.</li>
-              <li>Claude Code leser nå FSK-reglene i alle samtaler i dette prosjektet.</li>
-            </ol>
-            <p style="font-size:var(--text-sm); margin:0;"><strong>Direkte:</strong> Skriv <code>/skill Skill/Skill.md</code> eller referer til filen i prompten din.</p>
+            <p style="font-size:var(--text-sm); margin:0; border-top:1px solid var(--color-line); padding-top:var(--space-3);"><strong>Engangsbruk:</strong> Dra <code>Skill.md</code> eller hele <code>Skill.zip</code> inn som vedlegg i en vanlig samtale. Virker kun i den samtalen.</p>
           </div>
         </div>
 
