@@ -153,6 +153,69 @@ inn tydelig dato, tid, sted og påmelding.</code></pre>
     </section>
 
     <section class="section" style="border-top:1px solid var(--color-line);">
+      <h2>Bruk designskill direkte i AI-verktøy</h2>
+      <p>Mappen <code>Skill/</code> i dette designsystemet inneholder en ferdig skill-fil (<code>Skill.md</code>) med alle farger, regler, logoer og maler innebygd. Last den inn én gang – så følger AI-en FSK-designet automatisk hver gang du ber om materiell.</p>
+
+      <div class="grid grid-3" style="margin-top: var(--space-8);">
+
+        <div class="card">
+          <div class="card__body">
+            <h3>ChatGPT</h3>
+            <ol style="margin:0 0 var(--space-4); padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Gå til <strong>chatgpt.com</strong> og klikk på <em>Utforsk GPT-er → Opprett en GPT</em>.</li>
+              <li>Under <em>Konfigurer</em>: lim inn innholdet fra <code>Skill/Skill.md</code> i <em>Instruksjoner</em>-feltet.</li>
+              <li>Last opp filene i <code>Skill/assets/</code> via <em>Legg til filer</em>.</li>
+              <li>Lagre GPT-en – den husker designsystemet i alle fremtidige samtaler.</li>
+            </ol>
+            <p style="font-size:var(--text-sm); margin:0;"><strong>Alternativ (engangsbruk):</strong> Start en ny samtale og last opp <code>Skill.md</code> som vedlegg.</p>
+          </div>
+        </div>
+
+        <div class="card card--green">
+          <div class="card__body">
+            <h3>Claude</h3>
+            <ol style="margin:0 0 var(--space-4); padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Gå til <strong>claude.ai</strong> og åpne eller opprett et <em>Prosjekt</em>.</li>
+              <li>Klikk på prosjektnavnet → <em>Prosjektinstruksjoner</em>.</li>
+              <li>Lim inn innholdet fra <code>Skill/Skill.md</code> som prosjektinstruks.</li>
+              <li>Alle nye samtaler i prosjektet bruker da designsystemet automatisk.</li>
+            </ol>
+            <p style="font-size:var(--text-sm); margin:0;"><strong>Alternativ (engangsbruk):</strong> Start en samtale og dra <code>Skill.md</code> inn som vedlegg.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__body">
+            <h3>Claude Code</h3>
+            <ol style="margin:0 0 var(--space-4); padding-left:var(--space-5); font-size:var(--text-sm);">
+              <li>Klon eller ha designsystemet lokalt.</li>
+              <li>Åpne <code>CLAUDE.md</code> i prosjektroten (opprett om den ikke finnes).</li>
+              <li>Legg til linjen: <code>@Skill/Skill.md</code> for å inkludere skillen automatisk.</li>
+              <li>Claude Code leser nå FSK-reglene i alle samtaler i dette prosjektet.</li>
+            </ol>
+            <p style="font-size:var(--text-sm); margin:0;"><strong>Direkte:</strong> Skriv <code>/skill Skill/Skill.md</code> eller referer til filen i prompten din.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="prompt-box" style="margin-top: var(--space-8);">
+        <h3>Eksempelprompt etter innlasting av Skill</h3>
+        <p>Når Skill.md er lastet inn, holder det å skrive dette:</p>
+        <pre><code>Lag en A4-plakat i HTML/CSS for:
+
+Arrangement: Skileik for barn
+Dato: Søndag 18. januar 2026
+Tid: 11:00–13:00
+Sted: Arenaen, Fredrikstad Skiklubb
+Målgruppe: Barn 5–10 år
+Handling: Meld deg på via fsk.no
+
+Bruk snofnugg.svg og flerepersoner.svg som aktivitetsikoner.</code></pre>
+      </div>
+    </section>
+
+    <section class="section" style="border-top:1px solid var(--color-line);">
       <h2>Vanlige feil å unngå</h2>
       <div class="dodont">
         <div class="dodont__item dodont--do">

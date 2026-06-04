@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>FSK – Skileik for barn – Eksempelplakat A4</title>
+  <link rel="stylesheet" href="../assets/css/tokens.css">
+  <style>
+    @page { size: A4 portrait; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: var(--font-sans); background: #888; }
+
+    .sheet {
+      width: 210mm; min-height: 297mm;
+      margin: 16px auto;
+      background: var(--color-beige);
+      display: flex; flex-direction: column;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    }
+
+    .sheet__top {
+      background: var(--color-dark-blue);
+      color: var(--color-offwhite);
+      padding: 14mm 16mm 12mm;
+      display: flex;
+      align-items: center;
+      gap: 6mm;
+    }
+    .sheet__top img { height: 16mm; width: auto; }
+    .sheet__brand { font-weight: var(--fw-bold); font-size: 11pt; line-height: 1.2; letter-spacing: 0.01em; }
+
+    .sheet__hero {
+      background: var(--color-light-green);
+      padding: 16mm 16mm 14mm;
+    }
+    .sheet__title {
+      font-size: 38pt;
+      line-height: 1.08;
+      font-weight: var(--fw-bold);
+      letter-spacing: -0.02em;
+      color: var(--color-dark-blue);
+      margin: 0;
+    }
+    .sheet__subtitle {
+      font-size: 15pt;
+      font-weight: var(--fw-semibold);
+      color: var(--color-dark-blue);
+      margin: 4mm 0 0;
+      opacity: 0.75;
+    }
+
+    .sheet__body {
+      padding: 12mm 16mm;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8mm;
+    }
+    .sheet__lead { font-size: 14pt; line-height: 1.45; color: var(--color-dark-blue); margin: 0; }
+    .sheet__text { font-size: 11pt; line-height: 1.55; color: var(--color-dark-blue); margin: 0; }
+
+    .sheet__activities { display: flex; flex-direction: column; gap: 3mm; }
+    .sheet__activity {
+      display: flex;
+      align-items: center;
+      gap: 4mm;
+      background: var(--color-offwhite);
+      border-radius: 10px;
+      padding: 3mm 5mm;
+    }
+    .sheet__activity img { width: 11mm; height: 11mm; flex-shrink: 0; }
+    .sheet__activity-label { font-size: 11pt; font-weight: var(--fw-semibold); color: var(--color-dark-blue); line-height: 1.2; }
+    .sheet__activity-meta { font-size: 9pt; color: var(--color-green); font-weight: var(--fw-bold); }
+
+    .sheet__info { display: flex; gap: 6mm; margin-top: auto; }
+    .sheet__info-item { background: var(--color-offwhite); border-radius: 10px; padding: 4mm 6mm; flex: 1; }
+    .sheet__info-label { font-size: 8pt; font-weight: var(--fw-bold); text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-green); margin-bottom: 1mm; }
+    .sheet__info-value { font-size: 11pt; font-weight: var(--fw-semibold); color: var(--color-dark-blue); }
+
+    .sheet__bottom {
+      background: var(--color-green);
+      color: var(--color-offwhite);
+      padding: 6mm 16mm;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: var(--fw-bold);
+      font-size: 11pt;
+    }
+
+    @media print {
+      body { background: #fff; }
+      .sheet { margin: 0; box-shadow: none; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+
+    <div class="sheet__top">
+      <img src="../assets/logo/fsk-logo-emblem.svg" alt="FSK logo">
+      <div class="sheet__brand">Fredrikstad<br>Skiklubb</div>
+    </div>
+
+    <div class="sheet__hero">
+      <h1 class="sheet__title">Skileik<br>for barn</h1>
+      <p class="sheet__subtitle">Barn 5–10 år og foresatte</p>
+    </div>
+
+    <div class="sheet__body">
+      <p class="sheet__lead">Bli med på en morsom vinterdag i løypene! Vi leker oss på ski, lager snøhuler og varmer oss med kakao etterpå.</p>
+
+      <div class="sheet__activities">
+        <div class="sheet__activity">
+          <img src="../assets/icons/snofnugg.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Ski og lek i løypa</div>
+            <div class="sheet__activity-meta">Alle nivåer velkomne · Leid ski tilgjengelig</div>
+          </div>
+        </div>
+        <div class="sheet__activity">
+          <img src="../assets/icons/flerepersoner.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Felles aktiviteter for barn og voksne</div>
+            <div class="sheet__activity-meta">Instruktører fra FSK er til stede hele dagen</div>
+          </div>
+        </div>
+        <div class="sheet__activity">
+          <img src="../assets/icons/peis.svg" alt="">
+          <div>
+            <div class="sheet__activity-label">Kakao og hvile ved gapahuk</div>
+            <div class="sheet__activity-meta">Varm drikke inkludert · Ta med matpakke</div>
+          </div>
+        </div>
+      </div>
+
+      <p class="sheet__text">Meld deg på via <strong>fsk.no</strong> innen fredag 16. januar. Begrenset antall plasser.</p>
+
+      <div class="sheet__info">
+        <div class="sheet__info-item">
+          <div class="sheet__info-label">Dato</div>
+          <div class="sheet__info-value">Søndag 18. jan</div>
+        </div>
+        <div class="sheet__info-item">
+          <div class="sheet__info-label">Tid</div>
+          <div class="sheet__info-value">11:00 – 13:00</div>
+        </div>
+        <div class="sheet__info-item">
+          <div class="sheet__info-label">Sted</div>
+          <div class="sheet__info-value">Arenaen, FSK</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sheet__bottom">
+      <span>fsk.no</span>
+      <span>@fredrikstadskiklubb</span>
+    </div>
+
+  </div>
+</body>
+</html>
